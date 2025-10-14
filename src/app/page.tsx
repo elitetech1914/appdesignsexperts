@@ -1,103 +1,137 @@
+'use client'
+
+import HoveringGlassHeader from "@/components/Header";
+import { WavyBackground } from "@/components/ui/wavy-background";
+import { Marquee } from "@/components/ui/marquee"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 import Image from "next/image";
+import ServicesSection from '@/components/ServicesSection';
+import { Service } from '@/types/services';
+import AppDemoSection from "@/components/AppDemoSection";
+import LetsTalkSection from "@/components/LetsTalkSection";
+import Footer from "@/components/Footer";
+
+const logos = [
+  { src: '/images/logo.png', alt: 'Company One', width: 281, height: 81, href: 'https://company.one' },
+  { src: '/images/logo.png', alt: 'Company One', width: 281, height: 81, href: 'https://company.one' },
+  { src: '/images/logo.png', alt: 'Company One', width: 281, height: 81, href: 'https://company.one' },
+  { src: '/images/logo.png', alt: 'Company One', width: 281, height: 81, href: 'https://company.one' },
+  { src: '/images/logo.png', alt: 'Company One', width: 281, height: 81, href: 'https://company.one' },
+];
+
+// Sample data - you can replace this with data from an API or CMS
+const servicesData: Service[] = [
+  {
+    id: 1,
+    title: "Android App Development",
+    description: "Looking to build a successful Android application for your business? Need a scalable and high-performing solution? Look no further! Meta App Coders guarantees unique and fully capable Android app development services that not only digitally transform your business but also let you stay ahead of your competition.",
+    technologies: ["Android", "Google Fit", "Android Auto", "ARCore"],
+    category: "Mobile"
+  },
+  {
+    id: 2,
+    title: "iOS App Development",
+    description: "We are the go-to iOS app development company for businesses belonging to multiple business sizes and across the globe. We engineer feature-rich and appealing iPhone apps for both established enterprises and startups.",
+    technologies: ["Swift", "Objective-C", "XCode", "Flutter"],
+    category: "Mobile"
+  },
+  {
+    id: 3,
+    title: "React Native App Development",
+    description: "Build an app that delights users with a feature-rich and branded-looking mobile app for both iOS and Android platforms. Meta App Coders, a React Native app development company, gives perfect app development solutions that not only save time and cost of app development but also tune your business into a successful app faster.",
+    technologies: ["Redux", "JavaScript", "Firebase", "XCode"],
+    category: "Cross-Platform"
+  },
+  {
+    id: 4,
+    title: "Website Development",
+    description: "Website development has become the greatest boon for businesses across globe. Following the latest trend to meet user's expectations is something our company excel in. We help you complete your digital presence.",
+    technologies: ["Frontend", "Backend", "FullStack", "DevOps"],
+    category: "Web"
+  },
+  {
+    id: 5,
+    title: "Android App Development",
+    description: "Looking to build a successful Android application for your business? Need a scalable and high-performing solution? Look no further! Meta App Coders guarantees unique and fully capable Android app development services that not only digitally transform your business but also let you stay ahead of your competition.",
+    technologies: ["Android", "Google Fit", "Android Auto", "ARCore"],
+    category: "Mobile"
+  },
+  {
+    id: 6,
+    title: "iOS App Development",
+    description: "We are the go-to iOS app development company for businesses belonging to multiple business sizes and across the globe. We engineer feature-rich and appealing iPhone apps for both established enterprises and startups.",
+    technologies: ["Swift", "Objective-C", "XCode", "Flutter"],
+    category: "Mobile"
+  },
+  {
+    id: 7,
+    title: "React Native App Development",
+    description: "Build an app that delights users with a feature-rich and branded-looking mobile app for both iOS and Android platforms. Meta App Coders, a React Native app development company, gives perfect app development solutions that not only save time and cost of app development but also tune your business into a successful app faster.",
+    technologies: ["Redux", "JavaScript", "Firebase", "XCode"],
+    category: "Cross-Platform"
+  },
+  {
+    id: 8,
+    title: "Website Development",
+    description: "Website development has become the greatest boon for businesses across globe. Following the latest trend to meet user's expectations is something our company excel in. We help you complete your digital presence.",
+    technologies: ["Frontend", "Backend", "FullStack", "DevOps"],
+    category: "Web"
+  }
+];
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="overflow-x-hidden relative">
+      <HoveringGlassHeader title="My Site" subtitle="Beta" />
+      <WavyBackground colors={['#02f8b5', '#1cd9ff']} className="max-w-4xl w-full mx-auto pb-20 flex flex-col gap-5 justify-center items-center relative">
+        <div className="w-full px-4">
+          <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+            Redefining Experience
+          </p>
+          <p className="text-2xl font-medium md:text-lg mt-4 text-white inter-var text-center">
+            Transforming The Digital Landscape To
+            Shape The Vision Into Reality
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="mt-3 flex gap-5 items-center">
+          <ShimmerButton 
+            shimmerColor={'rgba(0, 0, 0, 0.9)'} 
+            shimmerDuration={'2s'} 
+            background="linear-gradient(to right, #02f8b5, #1cd9ff)"
+            className="shadow-6xl"
+          >
+            <span className="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-black lg:text-lg">
+              DISCUSS WITH A CONSULTANT
+            </span>
+          </ShimmerButton>
+          <ShimmerButton shimmerColor={'#02f8b5'} shimmerDuration={'2s'} className="shadow-2xl">
+            <span className="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-white lg:text-lg dark:from-white dark:to-slate-900/10">
+              OUR WORK
+            </span>
+          </ShimmerButton>
+
+        </div>
+        <div className="absolute -bottom-60 left-1/2 -translate-x-1/2 w-screen">
+          <Marquee className="w-full overflow-hidden">
+            {logos.map((logo, index) => (
+              <Image
+                key={index}
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={logo.height}
+                className="pr-20"
+              />
+            ))}
+          </Marquee>
+        </div>
+      </WavyBackground>
+      <ServicesSection services={servicesData} />
+      <AppDemoSection/>
+      <LetsTalkSection />
+      <Footer />
     </div>
+
   );
 }
