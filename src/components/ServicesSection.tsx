@@ -1,6 +1,7 @@
 'use client';
 
 import { ServicesSectionProps } from '@/types/services';
+import Image from 'next/image';
 
 const ServicesSection = ({ services }: ServicesSectionProps) => {
   return (
@@ -48,11 +49,18 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                   {service.technologies.map((tech, index) => (
                     <div
                       key={index}
-                      className="bg-gray-800 rounded-lg px-3 py-2 text-center transition-all duration-300 border border-gray-700"
+                      className="flex items-center justify-between gap-3 bg-gray-800 rounded-lg px-4 py-2 text-center transition-all duration-300 border border-gray-700"
                     >
-                      <span className="text-sm font-medium text-white">
-                        {tech}
-                      </span>
+                      <p className="text-xs font-medium text-white text-nowrap">
+                        {tech.name}
+                      </p>
+                     <Image
+                        src={`/images/${tech.logo}`}
+                        className='justify-end'
+                        alt='logo'
+                        width={30}
+                        height={30}
+                        />
                     </div>
                   ))}
                 </div>

@@ -117,7 +117,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <a href="mailto:info@metaappcoders.com" className="text-gray-400 hover:text-[#02f8b5] transition-colors">
-                  info@metaappcoders.com
+                  info@elitetechnology.com
                 </a>
               </li>
               <li className="flex items-center space-x-3">
@@ -136,7 +136,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Meta App Coders. All rights reserved.
+              © {currentYear} Elite Technology. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-[#02f8b5] transition-colors">

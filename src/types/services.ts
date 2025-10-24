@@ -2,7 +2,7 @@ export interface Service {
   id: number;
   title: string;
   description: string;
-  technologies: string[];
+  technologies: {name:string,logo:string}[];
   category: string;
 }
 

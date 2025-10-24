@@ -177,3 +177,136 @@
 body{
   background-color: black;
 }
+
+:root{
+  --accent-cyan: #02f8b5;
+  --accent-cyan-2: #1cd9ff;
+  /* Change this to 4px to make it even thinner */
+  --scrollbar-size: 6px;
+  --color-primary-500: #02f8b5;
+  --color-primary-600: #00e0a0;
+  --color-secondary-500: #1cd9ff;
+  --color-secondary-600: #00c4eb;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Use the same animation but ensure it's smooth */
+.animate-scroll-slow {
+  animation: scroll 40s linear infinite;
+  animation-delay: 0s;
+}
+
+.animate-scroll-medium {
+  animation: scroll 25s linear infinite;
+  animation-delay: 0s;
+}
+
+.animate-scroll-fast {
+  animation: scroll 15s linear infinite;
+  animation-delay: 0s;
+}
+
+/* Alternative: Use a longer animation that moves the entire duplicated set */
+@keyframes scroll-continuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-continuous-slow {
+  animation: scroll-continuous 80s linear infinite;
+}
+
+.animate-scroll-continuous-medium {
+  animation: scroll-continuous 50s linear infinite;
+}
+
+.animate-scroll-continuous-fast {
+  animation: scroll-continuous 30s linear infinite;
+}
+
+/* -----------------------------
+   WebKit / Blink / Safari
+   (Chrome, Edge, Opera, Safari)
+   ----------------------------- */
+*::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+/* Remove the up/down arrows (scrollbar buttons) */
+*::-webkit-scrollbar-button {
+  display: none;       /* removes arrows in Blink/WebKit */
+  width: 0;
+  height: 0;
+}
+
+/* Track (background area) — transparent, no padding or radius */
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0;
+  margin: 0;
+  /* no padding/border here so thumb can occupy whole track */
+}
+
+/* Thumb (the draggable part) — no border (no padding), slim, cyan gradient */
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-cyan), var(--accent-cyan-2));
+  border-radius: 9999px;
+  border: none;              /* important — removes padding effect */
+  box-shadow: none;         /* ensure no outline/shadow that looks like padding */
+  min-height: 24px;         /* keeps it tappable on touch devices */
+}
+
+/* Hover affordance */
+*::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.92);
+}
+
+/* Corner where horizontal + vertical meet */
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* -----------------------------
+   Firefox
+   -----------------------------
+   - Can't set px width for scrollbar; use 'thin' and colors.
+   - Firefox doesn't show arrow buttons in modern builds.
+*/
+* {
+  scrollbar-width: thin; /* auto | thin | none */
+  scrollbar-color: var(--accent-cyan) transparent; /* thumb then track */
+}
+
+/* -----------------------------
+   Tailwind-friendly utility (optional)
+   Place this in globals.css inside @layer components and use class="scrollbar-cyan"
+   ----------------------------- */
+@layer components {
+  .scrollbar-cyan {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-cyan) transparent;
+  }
+  .scrollbar-cyan::-webkit-scrollbar { width: var(--scrollbar-size); height: var(--scrollbar-size); }
+  .scrollbar-cyan::-webkit-scrollbar-button { display:none; width:0; height:0; }
+  .scrollbar-cyan::-webkit-scrollbar-track { background:transparent; border-radius:0; margin:0; }
+  .scrollbar-cyan::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-cyan-2));
+    border-radius:9999px; border:none; box-shadow:none; min-height:24px;
+  }
+  .scrollbar-cyan::-webkit-scrollbar-thumb:hover { filter:brightness(0.92); }
+}
+
+

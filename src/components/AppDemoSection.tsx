@@ -9,7 +9,7 @@ const AppDemoSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black to-[#007483]" />
         {/* Content with phone mockup */}
         <div className="relative max-w-7xl mx-auto w-full px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-screen">
+          <div className="grid grid-cols-3 lg:grid-cols-3 gap-8 items-center min-h-screen">
             {/* Left content */}
             <div className="text-white space-y-6">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">

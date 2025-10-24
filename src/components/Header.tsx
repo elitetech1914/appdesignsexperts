@@ -1,10 +1,17 @@
-import Image from "next/image";
-import React from "react";
+"use client"
 
-// HoveringGlassHeader.tsx
-// Default-exported React component (Tailwind CSS) that shows a floating header
-// with glassmorphism and a gentle hover "lift" effect.
-// Drop this file into your components folder and import it where needed.
+import Image from "next/image";
+import Link from "next/link";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { useState, useEffect } from "react";
 
 export type NavItem = {
   label: string;
@@ -13,12 +20,14 @@ export type NavItem = {
 
 export default function HoveringGlassHeader({
   navItems = [
-    { label: "Home", href: "#" },
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Industries", href: "/industries" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Blogs", href: "/blogs" }
   ],
   compact = false,
-  topOffset = 24, // px from top
+  topOffset = 24,
 }: {
   title?: string;
   subtitle?: string;
@@ -26,92 +35,153 @@ export default function HoveringGlassHeader({
   compact?: boolean;
   topOffset?: number;
 }) {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Only apply scroll behavior after component mounts
+  useEffect(() => {
+    setIsMounted(true);
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+    };
+  }, [lastScrollY]);
+
+  // Base classes that are consistent between server and client
+  const baseContainerClasses = "fixed left-1/2 z-50 transform -translate-x-1/2 w-full max-w-5xl px-4 pointer-events-auto transition-transform duration-300 ease-out";
+  
+  // Only add visibility classes after mounting to avoid hydration mismatch
+  const containerClasses = isMounted 
+    ? `${baseContainerClasses} ${isVisible ? 'translate-y-0' : '-translate-y-24'}`
+    : baseContainerClasses;
+
   return (
-    // Container centers the header and keeps it above content
     <div
       aria-hidden={false}
       style={{ top: `${topOffset}px` }}
-      className="fixed left-1/2 z-50 transform -translate-x-1/2 w-full max-w-5xl px-4 pointer-events-auto"
+      className={containerClasses}
     >
       <header
         role="banner"
         className={
-          "mx-auto w-full rounded-2xl border border-white/10 backdrop-blur-md bg-white/6 shadow-lg transition-transform duration-300 ease-out " +
+          "mx-auto w-full rounded-2xl border border-white/10 backdrop-blur-md bg-white/6 shadow-lg transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-105 hover:shadow-2xl " +
           (compact ? "py-2 px-4" : "py-3 px-6")
         }
-        // Add Safari support for backdrop-filter when Tailwind not present
         style={{ WebkitBackdropFilter: "blur(8px)", backdropFilter: "blur(8px)" }}
       >
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between gap-4">
           {/* logo / brand */}
-          <div className="flex items-center gap-3">
-              <Image
+          <Link href="/" className="flex items-center gap-3">
+            <Image
               src={'/images/logo.png'}
               alt="logo"
               width={281}
               height={81}
               className="w-32"
-              />
-          
-          </div>
+              priority
+            />
+          </Link>
 
-          {/* nav */}
-          <nav aria-label="Primary" className="ml-auto flex items-center gap-3">
+          {/* Desktop Navigation */}
+          <nav aria-label="Primary" className="ml-auto flex items-center gap-3 max-sm:hidden">
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={idx}
                 href={item.href ?? "#"}
                 className="rounded-full px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/6 focus:outline-none focus:ring-2 focus:ring-white/20 transition"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
 
-            <button
+            <Link
+              href="/contactus"
               className="ml-2 rounded-full px-3 py-2 text-sm font-medium bg-white/10 border border-white/12 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 transition"
-              aria-pressed="false"
             >
-              Get Started
-            </button>
+              Contact us
+            </Link>
           </nav>
+
+          {/* Mobile Sheet Navigation */}
+          <div className="sm:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="h-10 w-10 text-white border-0"
+                >
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Open navigation menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent 
+                side="right" 
+                className="bg-gray-900 border-l border-gray-700 text-white w-[280px] sm:w-[540px]"
+              >
+                <SheetHeader className="text-left">
+                  <SheetTitle className="text-white flex items-center gap-3">
+                    <Link href={'/'}>
+                      <Image
+                        src={'/images/logo.png'}
+                        alt="logo"
+                        width={281}
+                        height={81}
+                        className="w-24"
+                      />
+                    </Link>
+                  </SheetTitle>
+                </SheetHeader>
+                
+                <nav className="flex flex-col space-y-4 mt-8">
+                  {navItems.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      href={item.href ?? "#"}
+                      className="rounded-lg px-4 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/20 transition"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  
+                  <Link
+                    href="/contactus"
+                    className="mt-4 rounded-lg px-4 py-3 text-base font-medium bg-white/10 border border-white/12 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 transition text-left"
+                  >
+                    Contact us
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-
-        {/* Hover/float effect "lift" */}
-        <style jsx>{`
-          header:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-          }
-
-          header {
-            /* we keep an initial transform to enable GPU acceleration */
-            transform: translateZ(0);
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            header, header:hover {
-              transition: none !important;
-              transform: none !important;
-            }
-          }
-        `}</style>
       </header>
     </div>
   );
 }
-
-/*
-Usage notes:
-- This component relies on Tailwind CSS utilities (backdrop-blur, bg-opacity, etc.).
-- Place it on pages with darker backgrounds so the glass effect reads nicely.
-- Props:
-  - title, subtitle: brand text
-  - navItems: array of {label, href}
-  - compact: reduces vertical padding
-  - topOffset: pixels from top of viewport
-
-Example:
-import HoveringGlassHeader from '@/components/HoveringGlassHeader';
-
-<HoveringGlassHeader title="My Site" subtitle="Beta" />
-*/
