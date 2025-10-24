@@ -7,36 +7,35 @@ import LetsTalkSection from "@/components/LetsTalkSection";
 import Footer from "@/components/Footer";
 import { Service } from '@/types/services';
 
-// Sample data - you can replace this with data from an API or CMS
 const servicesData: Service[] = [
   {
     id: 1,
     title: "Android App Development",
     description: "Looking to build a successful Android application for your business? Need a scalable and high-performing solution? Look no further! Meta App Coders guarantees unique and fully capable Android app development services that not only digitally transform your business but also let you stay ahead of your competition.",
-    technologies: ["Android", "Google Fit", "Android Auto", "ARCore"],
+    technologies: [{name:"Android", logo:"androidstudio.svg"}, {name:"Google Fit",logo:"googlefit.svg"}, {name:"Auto",logo:"androidauto.svg"}, {name:"ARCore",logo:"arcore.svg"}],
     category: "Mobile"
   },
   {
     id: 2,
     title: "iOS App Development",
-    description: "Transform your ideas into stunning iOS applications that users will love. Our expert team specializes in creating native iOS apps with cutting-edge features and seamless performance.",
-    technologies: ["Swift", "SwiftUI", "ARKit", "CoreML"],
+    description: "We are the go-to iOS app development company for businesses belonging to multiple business sizes and across the globe. We engineer feature-rich and appealing iPhone apps for both established enterprises and startups.",
+    technologies: [{name:"Swift", logo:"swift.svg"}, {name:"Objective-C",logo:"objective.svg"}, {name:"XCode",logo:"xcode.svg"}, {name:"Flutter",logo:"flutter.svg"}],
     category: "Mobile"
   },
   {
     id: 3,
-    title: "Web Development",
-    description: "Create powerful web applications that drive your business forward. From responsive designs to progressive web apps, we deliver solutions that make an impact.",
-    technologies: ["React", "Next.js", "Node.js", "TypeScript"],
-    category: "Web"
+    title: "React Native App Development",
+    description: "Build an app that delights users with a feature-rich and branded-looking mobile app for both iOS and Android platforms. Meta App Coders, a React Native app development company, gives perfect app development solutions that not only save time and cost of app development but also tune your business into a successful app faster.",
+    technologies: [{name:"Redux", logo:"redux.svg"}, {name:"JavaScript",logo:"javaScript.svg"}, {name:"Firebase",logo:"firebase.svg"}, {name:"XCode",logo:"xcode.svg"}],
+    category: "Cross-Platform"
   },
   {
     id: 4,
-    title: "UI/UX Design",
-    description: "Craft beautiful, intuitive interfaces that users love to interact with. Our design team focuses on creating engaging experiences that convert visitors into customers.",
-    technologies: ["Figma", "Adobe XD", "Sketch", "Prototyping"],
-    category: "Design"
-  }
+    title: "Website Development",
+    description: "Website development has become the greatest boon for businesses across globe. Following the latest trend to meet user's expectations is something our company excel in. We help you complete your digital presence.",
+    technologies: [{name:"Frontend", logo:"frontend.svg"}, {name:"Backend",logo:"backend.svg"}, {name:"FullStack",logo:"fullStack.svg"}, {name:"DevOps",logo:"devops.svg"}],
+    category: "Web"
+  },
 ];
 
 const HomeContent = () => {
