@@ -7,6 +7,7 @@ import Image from "next/image";
 import ServicesSection from '@/components/ServicesSection';
 import { Service } from '@/types/services';
 import AppDemoSection from "@/components/AppDemoSection";
+import OurProcesss from "@/components/OurProcesss";
 import LetsTalkSection from "@/components/LetsTalkSection";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 
@@ -108,6 +109,7 @@ export default function Home() {
         </div>
       </WavyBackground>
       <ServicesSection services={servicesData} />
+      <OurProcesss/>
       <AppDemoSection />
       <LetsTalkSection />
 

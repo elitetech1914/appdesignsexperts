@@ -141,24 +141,25 @@ export default function IndustriesPage() {
                             {/* Increased top padding so internal content sits below the diagonal and isn't hidden */}
                             <div className="px-6 pt-16 md:pt-20 lg:pt-24 pb-12">
                                 {/* The overlapping block (no extra bg here since container is black) */}
-                                <div className="mb-12 pt-5 py-8 bg-transparent text-center">
-                                    <h2 className="text-5xl font-bold text-[var(--accent-1)]">Industry Solutions</h2>
-                                    <p className="mt-3 m-auto max-w-[900px] text-lg text-slate-300">
-                                        Digitally change your business with support from a trusted Metro App Coders expert who knows all aspects of
-                                        different industries and technologies.
+                                <div className="text-center mb-16">
+                                    <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                                        Industry Solutions
+                                    </h1>
+                                    <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                                    <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+                                        Digitally change your business with support from a trusted Metro App Coders expert who knows all aspects of different industries and technologies.
                                     </p>
                                 </div>
 
                                 {/* Two column: left content, right boxes grid */}
-                                <div className="text-center">
-                                    <div className="lg:col-span-2">
-                                        <h3 className="text-5xl font-bold text-[var(--accent-2)]">Transformational App & Web Development Across Industries</h3>
-                                        <p className="mt-4 text-slate-300 text-lg max-w-[900px] m-auto">
-                                            Leverage next-gen technologies to build industry leading solutions that offer scalable and transformational user experience seamlessly.
-                                            Our software experts have deep domain knowledge and use modern tools to deliver holistic app and web solutions tailored to your needs.
-                                        </p>
-                                    </div>
-
+                                <div className="text-center mb-16 py-16">
+                                    <h1 className="text-5xl font-bold bg-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                                        Transformational App & Web Development Across Industries
+                                    </h1>
+                                    <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                                    <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+                                        Leverage next-gen technologies to build industry leading solutions that offer scalable and transformational user experience seamlessly. Our software experts have deep domain knowledge and use modern tools to deliver holistic app and web solutions tailored to your needs.
+                                    </p>
                                 </div>
 
                                 {/* Domains grid */}
@@ -246,17 +247,27 @@ export default function IndustriesPage() {
 
 
                                 {/* Our Work / Success Stories */}
-                                <h3 className="text-5xl mt-20 text-center mb-4 font-bold text-[var(--accent-1)]">Success Stories</h3>
-                                <p className="mt-4 text-slate-300 text-lg max-w-[900px] m-auto text-center mb-4">
-                                    We did it together.....
-                                </p>
+                                <div className="text-center mb-16 mt-16">
+                                    <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                                        Success Stories
+                                    </h1>
+                                    <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                                    <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+                                        We did it together.....
+                                    </p>
+                                </div>
                                 <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen max-w-none">
                                     <AutoScrollBar boxes={sampleBoxes} />
                                 </div>
 
 
                                 {/* Testimonial */}
-                                <h3 className="text-5xl mt-24 text-center font-bold text-[var(--accent-2)]">What Client Says</h3>
+                                <div className="text-center mt-16">
+                                    <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                                        What Clients Say
+                                    </h1>
+                                    <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                                </div>
                                 <TestimonialCarousel testimonials={sampleTestimonials} />
                             </div>
                         </div>

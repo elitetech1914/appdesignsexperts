@@ -31,10 +31,11 @@ const LetsTalkSection = () => {
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
             Let&apos;s Talk About Your Project
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+          <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
             Ready to transform your ideas into reality? Get in touch with us and let&apos;s create something amazing together.
           </p>
         </div>
