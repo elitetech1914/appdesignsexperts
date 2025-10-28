@@ -2,6 +2,8 @@
 
 import { ServicesSectionProps } from '@/types/services';
 import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const ServicesSection = ({ services }: ServicesSectionProps) => {
   return (
@@ -21,8 +23,8 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
           {services.map((service) => (
+            <Link href={`/${service.url}`} key={service.id}>
             <div
-              key={service.id}
               className="bg-gray-900 rounded-2xl border border-gray-800 transition-all duration-500 group overflow-hidden hover:shadow-2xl hover:shadow-[#02f8b5]/30"
             >
               {/* Service Header */}
@@ -48,6 +50,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                 <div className="grid grid-cols-2 gap-3">
                   {service.technologies.map((tech, index) => (
                     <div
+
                       key={index}
                       className="flex items-center justify-between gap-3 bg-gray-800 rounded-lg px-4 py-2 text-center transition-all duration-300 border border-gray-700"
                     >
@@ -67,16 +70,23 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
               </div>
 
               {/* Category Badge */}
-              <div className="px-6 pb-6">
+              <div className="px-6 pb-6 flex justify-between items-center">
                 <span className="inline-block bg-gradient-to-r from-[#02f8b5]/20 to-[#1cd9ff]/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-[#02f8b5]/30">
                   {service.category}
                 </span>
+                <span>
+
+                  <ArrowRight className="inline-block ml-2 text-[#02f8b5]" size={25} />
+                  
+                </span>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>
     </section>
+
   );
 };
 

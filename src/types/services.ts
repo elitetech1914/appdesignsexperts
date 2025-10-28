@@ -4,6 +4,7 @@ export interface Service {
   description: string;
   technologies: {name:string,logo:string}[];
   category: string;
+  url: string;
 }
 
 export interface ServicesSectionProps {

@@ -1,17 +1,3 @@
-/*
-OurProcessComponent.jsx
-Vertical timeline React + Tailwind component (alternating left/right).
-Responsive behavior:
-- Desktop (sm+): 3-column alternating timeline (as before) using grid-template-columns: 1fr 72px 1fr.
-- Mobile (sm:hidden): simplified layout where the vertical line is on the left and all step elements are on the right. This is implemented as a separate mobile markup block for clarity.
-
-Requirements:
-- Tailwind CSS
-- lucide-react: npm i lucide-react
-
-Save as components/OurProcessComponent.jsx
-*/
-
 import React from 'react';
 import { Search, Target, PenTool, Compass, Wrench, CloudUpload, CheckSquare, Box } from 'lucide-react';
 
@@ -44,7 +30,7 @@ export default function OurProcess() {
         {/* ---------------------- MOBILE LAYOUT ---------------------- */}
         <div className="sm:hidden relative">
           {/* left vertical line */}
-          <div className="absolute left-6 top-0 bottom-0 w-[3px] rounded-full" style={{ background: 'linear-gradient(180deg,#02f8b5,#1cd9ff)' }} />
+          <div className="absolute left-6 top-0 bottom-0 w-[4px] rounded-full" style={{ background: 'linear-gradient(180deg,#02f8b5,#1cd9ff)' }} />
 
           <div className="space-y-6 pl-16 pr-4">
             {STEPS.map((step) => (

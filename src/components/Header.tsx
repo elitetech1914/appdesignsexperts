@@ -24,7 +24,7 @@ export default function HoveringGlassHeader({
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
     { label: "Portfolio", href: "/portfolio" },
-    { label: "Blogs", href: "/blogs" }
+    { label: "Blogs", href: "/blogs" },
   ],
   compact = false,
   topOffset = 24,
