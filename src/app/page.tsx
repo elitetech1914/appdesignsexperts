@@ -57,7 +57,7 @@ const servicesData: Service[] = [
     id: 3,
     title: "React Native App Development",
     description: "Build an app that delights users with a feature-rich and branded-looking mobile app for both iOS and Android platforms. We are a React Native app development company, gives perfect app development solutions that not only save time and cost of app development but also tune your business into a successful app faster.",
-    technologies: [{ name: "Redux", logo: "redux.svg" }, { name: "JavaScript", logo: "javaScript.svg" }, { name: "Firebase", logo: "firebase.svg" }, { name: "XCode", logo: "xcode.svg" }],
+    technologies: [{ name: "Redux", logo: "redux.svg" }, { name: "JavaScript", logo: "javascript.svg" }, { name: "Firebase", logo: "firebase.svg" }, { name: "XCode", logo: "xcode.svg" }],
     category: "Cross-Platform",
     url: "react-native-app-development"
   },
@@ -65,7 +65,7 @@ const servicesData: Service[] = [
     id: 4,
     title: "Website Development",
     description: "Website development has become the greatest boon for businesses across globe. Following the latest trend to meet user's expectations is something our company excel in. We help you complete your digital presence.",
-    technologies: [{ name: "Frontend", logo: "frontend.svg" }, { name: "Backend", logo: "backend.svg" }, { name: "FullStack", logo: "fullStack.svg" }, { name: "DevOps", logo: "devops.svg" }],
+  technologies: [{ name: "Frontend", logo: "frontend.svg" }, { name: "Backend", logo: "backend.svg" }, { name: "FullStack", logo: "fullstack.svg" }, { name: "DevOps", logo: "devops.svg" }],
     category: "Web",
     url: "website-development"
   },
