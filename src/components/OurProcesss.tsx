@@ -107,7 +107,6 @@ export default function OurProcess() {
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6, delay: idx * 0.04 }}
                       />
-
                       {/* mobile row: icon & content displayed inline (hidden on sm+) */}
                     </div>
                   </div>
