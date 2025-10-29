@@ -3,31 +3,105 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
-import { ShimmerButton } from "@/components/ui/shimmer-button";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import { ButtonGroup } from "@/components/ui/button-group";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import OurProcess from "@/components/OurProcesss";
+
+const sampleTestimonials = [
+	{
+		id: '1',
+		name: 'Darren Legg',
+		role: 'Director',
+		company: 'Stantricia',
+		avatar: '/images/reviews/darren-legg-starfinda.jpg',
+		rating: 5,
+		quote: 'They understood the scope of our project better than anyone else.'
+	},
+	{
+		id: '2',
+		name: 'Sarah Johnson',
+		role: 'CEO',
+		company: 'TechFlow',
+		avatar: '/images/reviews/healthy-luxe.png',
+		rating: 5,
+		quote: 'The quality of work exceeded our expectations. Truly transformative digital solutions.'
+	},
+	{
+		id: '3',
+		name: 'Uber',
+		role: 'Strategic Program Manager',
+		company: 'Uber',
+		avatar: '/images/reviews/Uber.jpg',
+		rating: 5,
+		quote: 'Outstanding attention to detail and incredible technical expertise across multiple industries.'
+	},
+	{
+		id: '4',
+		name: 'David Kim',
+		role: 'Founder',
+		company: 'HealthTech Plus',
+		avatar: '/images/reviews/garry-jedkins-aktv.jpg',
+		rating: 5,
+		quote: 'The healthcare solutions they built have revolutionized our patient care platform.'
+	}
+];
 
 export default function AndroidPage() {
+
+	const [selected, setSelected] = useState<'frontend' | 'frameworks' | 'platforms'>('frontend');
+
+	const techSets: Record<string, { src: string; name: string }[]> = {
+		frontend: [
+			// Use all icons from the `mobile frontend` folder
+			{ src: '/images/android/tech/mobile-frontend/cordova.svg', name: 'Cordova' },
+			{ src: '/images/android/tech/mobile-frontend/iconic.svg', name: 'Ionic' },
+			{ src: '/images/android/tech/mobile-frontend/kotlin.svg', name: 'Kotlin/Java' },
+			{ src: '/images/android/tech/mobile-frontend/react.svg', name: 'React Native' },
+			{ src: '/images/android/tech/mobile-frontend/xnative.svg', name: 'Xamarin' },
+		],
+		frameworks: [
+			{ src: '/images/android/tech/frameworks/androidauto.svg', name: 'Android Auto' },
+			{ src: '/images/android/tech/frameworks/androidstudio.svg', name: 'Android Studio' },
+			{ src: '/images/android/tech/frameworks/arcore.svg', name: 'ARCore' },
+			{ src: '/images/android/tech/frameworks/googleassistntsdk.svg', name: 'Google Assistant SDK' },
+			{ src: '/images/android/tech/frameworks/googlefit.svg', name: 'Google Fit' },
+			{ src: '/images/android/tech/frameworks/opengl.svg', name: 'OpenGL' },
+		],
+		platforms: [
+			{ src: '/images/android/tech/platforms/aws.svg', name: 'AWS' },
+			{ src: '/images/android/tech/platforms/azure.svg', name: 'Azure' },
+			{ src: '/images/android/tech/platforms/cicd.svg', name: 'AppCenter for CI/CD' },
+			{ src: '/images/android/tech/platforms/firebase.svg', name: 'Firebase' },
+			{ src: '/images/android/tech/platforms/googlecloud.svg', name: 'Google Cloud' },
+			{ src: '/images/android/tech/platforms/kubernetes.svg', name: 'Kubernetes' },
+		],
+	};
+
 	return (
 		<div className="min-h-screen bg-black text-white m-8">
-			
+
 			{/* HERO */}
 			<section className="relative overflow-hidden py-24">
 				<div className="max-w-6xl mx-auto px-6 lg:px-8">
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center relative z-10">
-						<div>
-							<h1 className="text-4xl sm:text-5xl font-bold leading-tight" style={{ color: "#02f8b5" }}>
+					<div className="flex flex-col items-center text-center gap-6 relative z-10">
+						<div className="max-w-3xl">
+							<h1 className="text-4xl sm:text-6xl font-bold leading-tight" style={{ color: "#02f8b5" }}>
 								Android App Development Company
 							</h1>
 
-							<p className="mt-6 text-gray-300 max-w-xl">
-								Build scalable, secure and high-performance Android apps with our experienced team. From MVPs to
-								enterprise-grade apps — we design, develop and ship delightful mobile experiences.
+							<p className="mt-6 text-gray-300">
+								Looking to build a successful Android application for your business? Need a scalable and high-performing solution? Look no further! We guarantee unique and fully capable Android app development services that not only digitally transform your business but also let you stay ahead of your competition.
 							</p>
 
-							<div className="mt-8 flex flex-wrap gap-3">
-								<Link href="#contact">
-									<ShimmerButton className="rounded-full px-8">
-										Hire Android Developers
-									</ShimmerButton>
+							<div className="mt-8 flex items-center justify-center gap-4">
+								<Link
+									href="/contactus"
+									className="inline-block rounded-full px-6 py-3 font-semibold text-black"
+									style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+								>
+									Hire Android Developers
 								</Link>
 
 								<Link href="#services" className="inline-flex items-center justify-center rounded-full px-6 py-3 border border-white/10 text-white hover:bg-white/5 transition-colors">
@@ -35,32 +109,26 @@ export default function AndroidPage() {
 								</Link>
 							</div>
 
-							<div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
-								<Card className="p-4 bg-black/50 backdrop-blur border-white/10 text-center">
+							<div className="mt-10 flex items-center justify-center gap-4">
+								<Card className="p-4 w-32 bg-black/50 backdrop-blur border-white/10 text-center">
 									<Image src="/images/android/features/cost-effective.png" alt="Cost Effective" width={48} height={48} className="mx-auto" />
-									<p className="mt-2 text-sm text-white">Cost Effective</p>
+									<p className="text-sm text-white">Cost <br />Effective</p>
 								</Card>
 
-								<Card className="p-4 bg-black/50 backdrop-blur border-white/10 text-center">
+								<Card className="p-4 w-32 bg-black/50 backdrop-blur border-white/10 text-center">
 									<Image src="/images/android/features/high-performance.png" alt="High Performance" width={48} height={48} className="mx-auto" />
-									<p className="mt-2 text-sm text-white">High Performance</p>
+									<p className="text-sm text-white">High <br />Performance</p>
 								</Card>
 
-								<Card className="p-4 bg-black/50 backdrop-blur border-white/10 text-center">
+								<Card className="p-4 w-32 bg-black/50 backdrop-blur border-white/10 text-center">
 									<Image src="/images/android/features/web-support.png" alt="Web Support" width={48} height={48} className="mx-auto" />
-									<p className="mt-2 text-sm text-white">Web Support</p>
+									<p className="text-sm text-white">Web <br />Support</p>
 								</Card>
 
-								<Card className="p-4 bg-black/50 backdrop-blur border-white/10 text-center">
+								<Card className="p-4 w-32 bg-black/50 backdrop-blur border-white/10 text-center">
 									<Image src="/images/android/features/open-source.png" alt="Open Source" width={48} height={48} className="mx-auto" />
-									<p className="mt-2 text-sm text-white">Open Source</p>
+									<p className="text-sm text-white">Open <br />Source</p>
 								</Card>
-							</div>
-						</div>
-
-						<div className="order-first lg:order-last">
-							<div className="w-full aspect-[4/3] rounded-2xl flex items-center justify-center">
-								<Image src="/images/android-app-dev.png" alt="mobile gif" width={560} height={420} className="rounded-xl" />
 							</div>
 						</div>
 					</div>
@@ -70,56 +138,78 @@ export default function AndroidPage() {
 			{/* SERVICES / TECHNOLOGIES */}
 			<section id="services" className="py-16 border-t border-white/6">
 				<div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
-					<h2 className="text-2xl font-semibold" style={{ color: "#1cd9ff" }}>
-						Full-Fledged Android App Development Services
-					</h2>
-
-					<p className="mt-4 text-gray-300 max-w-3xl mx-auto">
-						We provide end-to-end Android development: consultation, UI/UX, custom native apps, cross-platform solutions and
-						testing.
-					</p>
-
+					<div className="text-center mb-16 mt-8">
+						<h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+							Full-Fledged Android App Development Services
+						</h1>
+						<div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+						<p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+							As a leading Android app development company, we understand the importance of mobile apps in today&apos;s digital world. Our team of experienced developers, designers, and strategists is here to help turn your ideas into reality. We specialize in creating custom Android apps that are not only user-friendly but also deliver a seamless user experience.
+							Whether you have a complex application to build or a simple MVP android app, we are well-versed in providing the ultimate solutions with robust and innovative technologies while also ensuring that our team and you are on the same page by effectively communicating at every stage of the development.
+						</p>
+					</div>
 					<div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto justify-items-center">
 						{[
 							{
 								title: "Android app development consultation",
-								description: "Expert guidance on technology stack, architecture, and development roadmap"
+								description: "Android apps have their user base and set of client requirements. We assist companies in integrating their concepts with these standards and an Android-specific customer base. Our Android app developers assist you in determining the ideal Android platform and methods for dominating the market."
 							},
 							{
 								title: "Android app UI/UX",
-								description: "User-centered design with modern Material Design principles"
+								description: "One of the most expensive ecosystems is Android. It has a variety of equipment that works in it. Across all Android devices and versions, our team of Android app designers is skilled at producing engaging experiences."
 							},
 							{
 								title: "Custom android app development",
-								description: "Native and cross-platform solutions tailored to your needs"
+								description: "Our Android app development services are equipped with creating dependable, scalable Android solutions. We develop unique Android apps for a variety of global companies. We work with you to create a product that exhibits your genuine voice in a shop with millions of apps."
 							},
 							{
 								title: "Android software testing",
-								description: "Comprehensive QA including functional, performance, and security testing"
+								description: "Security and performance come first in our Android mobile app development approach. We make sure that the creation of your Android mobile application is flawless and lag-free. For future-proof Android software development, we combine manual and automated testing procedures."
 							}
 						].map((service, idx) => (
-								<Card key={idx} className="p-4 bg-black backdrop-blur border-white/10 hover:border-[#02f8b5] transition-colors mx-auto text-center">
-									<h4 className="font-semibold text-[#02f8b5]">{service.title}</h4>
-									<p className="mt-2 text-sm text-gray-300">{service.description}</p>
-								</Card>
-							))}
-					</div>
-
-					<div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
-						{[
-							{ src: "/images/android/tech/kotlin.svg", name: "Kotlin/Java" },
-							{ src: "/images/android/tech/xnative.svg", name: "Xamarin" },
-							{ src: "/images/android/tech/cordova.svg", name: "Cordova" },
-							{ src: "/images/android/tech/iconic.svg", name: "Ionic" },
-							{ src: "/images/android/tech/react.svg", name: "React Native" },
-						].map((tech, idx) => (
-							<Card key={idx} className="group hover:border-[#02f8b5]/50 transition-colors">
-								<div className="flex flex-col items-center justify-center p-4 bg-black">
-									<Image src={tech.src} alt={tech.name} width={80} height={40} className="group-hover:scale-110 transition-transform" />
-									<p className="mt-2 text-xs text-gray-400 group-hover:text-[#02f8b5]">{tech.name}</p>
-								</div>
+							<Card key={idx} className="p-4 bg-black backdrop-blur border-white/10 hover:border-[#02f8b5] transition-colors mx-auto text-center">
+								<h4 className="font-semibold text-[#02f8b5]">{service.title}</h4>
+								<p className="text-sm text-gray-300">{service.description}</p>
 							</Card>
 						))}
+					</div>
+
+
+
+					<div className="mt-12">
+						<div className="flex items-center justify-center gap-8">
+							<ButtonGroup>
+								<Button
+									variant="ghost"
+									onClick={() => setSelected('frontend')}
+									className={`border border-[#02f8b5] ${selected === 'frontend' ? 'bg-[#02f8b5] text-black' : 'hover:bg-black hover:text-[#00ab7d]'}`}>
+									Mobile Frontend
+								</Button>
+								<Button
+									variant="ghost"
+									onClick={() => setSelected('frameworks')}
+									className={`border border-[#02f8b5] ${selected === 'frameworks' ? 'bg-[#02f8b5] text-black' : 'hover:bg-black hover:text-[#00ab7d]'}`}>
+									Framework
+								</Button>
+								<Button
+									variant="ghost"
+									onClick={() => setSelected('platforms')}
+									className={`border border-[#02f8b5] ${selected === 'platforms' ? 'bg-[#02f8b5] text-black' : 'hover:bg-black hover:text-[#00ab7d]'}`}>
+									Platform
+								</Button>
+							</ButtonGroup>
+						</div>
+						{/* icons for the selected set */}
+						<div className="mt-6 flex flex-wrap justify-center gap-12">
+							{(techSets[selected] || []).map((tech, idx) => (
+								<div key={idx} className="group hover:border-[#02f8b5]/50 transition-colors">
+									<div className="flex flex-col items-center justify-center p-4 bg-black">
+										<Image src={tech.src} alt={tech.name} width={80} height={40} className="group-hover:scale-110 transition-transform" />
+										<p className="mt-2 text-xs text-gray-400 group-hover:text-[#02f8b5]">{tech.name}</p>
+									</div>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 			</section>
@@ -127,9 +217,15 @@ export default function AndroidPage() {
 			{/* OUR NUMBERS */}
 			<section className="py-16 bg-gradient-to-r from-black via-[#02121a] to-black">
 				<div className="max-w-6xl mx-auto px-6 lg:px-8">
-					<h3 className="text-xl font-semibold text-center">Our Numbers</h3>
-					<p className="mt-3 text-gray-300 text-center">Results that speak for themselves</p>
-
+					<div className="text-center mb-16">
+						<h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+							Our Numbers
+						</h1>
+						<div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+						<p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+							Results that speak for themselves
+						</p>
+					</div>
 					<div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
 						{[
 							{ number: "200+", label: "Apps Delivered" },
@@ -139,7 +235,7 @@ export default function AndroidPage() {
 						].map((stat, idx) => (
 							<Card key={idx} className="p-6 bg-black/50 backdrop-blur border-white/10 text-center">
 								<h4 className="text-3xl font-bold" style={{ color: "#02f8b5" }}>{stat.number}</h4>
-								<p className="mt-2 text-gray-300">{stat.label}</p>
+								<p className="text-gray-300">{stat.label}</p>
 							</Card>
 						))}
 					</div>
@@ -147,56 +243,24 @@ export default function AndroidPage() {
 			</section>
 
 			{/* PROCESS */}
-			<section className="py-16">
-				<div className="max-w-6xl mx-auto px-6 lg:px-8">
-					<h3 className="text-xl font-semibold">Our Process</h3>
-					<p className="mt-3 text-gray-300 max-w-3xl">
-						A pragmatic and iterative approach: discovery, design, development, QA, launch and continuous improvement.
-					</p>
-
-					<div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
-						{[
-							{
-								title: "Discovery",
-								description: "We analyze users, markets, and objectives to define the right product strategy.",
-								step: "01"
-							},
-							{
-								title: "Design",
-								description: "User-centered design approach with interactive prototypes for rapid validation.",
-								step: "02"
-							},
-							{
-								title: "Development",
-								description: "Agile development with modern tools and best practices for quality code.",
-								step: "03"
-							},
-							{
-								title: "Testing & Launch",
-								description: "Comprehensive QA, performance optimization, and successful deployment.",
-								step: "04"
-							}
-						].map((step, idx) => (
-							<Card key={idx} className="group relative p-6 bg-black/50 backdrop-blur border-white/10 hover:border-[#02f8b5] transition-all duration-300">
-								<div className="absolute -top-4 left-6 px-2 py-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] rounded text-black text-sm font-bold">
-									{step.step}
-								</div>
-								<h4 className="font-semibold text-[#02f8b5] mt-2">{step.title}</h4>
-								<p className="mt-2 text-sm text-gray-300">{step.description}</p>
-								<div className="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] transition-all duration-300" />
-							</Card>
-						))}
-					</div>
-				</div>
+			<section>
+				<OurProcess />
 			</section>
 
 			{/* PORTFOLIO */}
 			<section className="py-16 border-t border-white/6 bg-black">
 				<div className="max-w-6xl mx-auto px-6 lg:px-8">
-					<h3 className="text-xl font-semibold">Portfolio</h3>
-					<p className="mt-3 text-gray-300">Selected Android apps we built for clients.</p>
+					<div className="text-center mb-16">
+						<h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+							Portfolio
+						</h1>
+						<div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+						<p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+							Selected Android apps we built for clients.
+						</p>
+					</div>
 
-					<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+					<div className="mt-8 flex flex-wrap justify-center items-center gap-6">
 						{[
 							{
 								name: "AKTV",
@@ -211,25 +275,31 @@ export default function AndroidPage() {
 								description: "Personalized nutrition and meal planning platform"
 							}
 						].map((project, i) => (
-							<div key={i} className="group">
+							<div key={i}>
 								{/* Image block - larger and separate from text */}
-								<div className="overflow-hidden rounded-lg bg-black">
-									<Image src={project.image} alt={project.name} width={1600} height={900} className="w-full h-64 sm:h-72 md:h-80 object-cover" />
-								</div>
-								{/* Text card separate from image */}
-								<Card className="mt-3 p-4 bg-black/50 backdrop-blur border-white/10">
-									<h5 className="font-semibold text-[#02f8b5]">{project.name}</h5>
-									<p className="text-sm text-gray-300">{project.category}</p>
-									<p className="mt-2 text-sm text-gray-300">{project.description}</p>
+								<Card className="bg-black/50 backdrop-blur border-white/10 max-w-[290px]">
+									<div className="overflow-hidden rounded-lg bg-black">
+										<Image src={project.image} alt={project.name} width={1600} height={900} className="w-full h-64 sm:h-72 md:h-80 object-cover" />
+									</div>
+									{/* Text card separate from image */}
+									<div className="px-4 pb-4 h-28 flex flex-col gap-2">
+										<div>
+											<h5 className="font-semibold text-[#02f8b5]">{project.name}</h5>
+											<p className="text-sm text-gray-300">{project.category}</p>
+										</div>
+										<p className="mt-2 text-sm text-gray-300">{project.description}</p>
+									</div>
 								</Card>
 							</div>
 						))}
 					</div>
 					<div className="mt-8 text-center">
-						<Link href="/portfolio">
-							<ShimmerButton className="px-8">
-								View All Projects
-							</ShimmerButton>
+						<Link
+							href="/portfolio"
+							className="inline-block rounded-full px-6 py-3 font-semibold text-black"
+							style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+						>
+							View All Projects
 						</Link>
 					</div>
 				</div>
@@ -238,8 +308,15 @@ export default function AndroidPage() {
 			{/* WHY CHOOSE US */}
 			<section className="py-16 border-t border-white/6">
 				<div className="max-w-6xl mx-auto px-6 lg:px-8">
-					<h3 className="text-xl font-semibold">Why Choose Us</h3>
-					<p className="mt-3 text-gray-300">Expertise, commitment and proven results make us your ideal Android development partner.</p>
+					<div className="text-center mb-16">
+						<h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+							Why Choose Us
+						</h1>
+						<div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+						<p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+							Expertise, commitment and proven results make us your ideal Android development partner.
+						</p>
+					</div>
 
 					<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 						<Card className="bg-black/50 backdrop-blur border-white/10 p-6">
@@ -268,73 +345,41 @@ export default function AndroidPage() {
 			{/* TESTIMONIALS */}
 			<section className="py-16 bg-black/50">
 				<div className="max-w-6xl mx-auto px-6 lg:px-8">
-					<h3 className="text-xl font-semibold text-center">What Clients Say</h3>
-					<p className="mt-3 text-gray-300 text-center">Trusted by leading companies worldwide</p>
-
-					<div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{[
-							{
-								name: "John D.",
-								role: "Project Manager at Uber",
-								review: "They are very good at execution and delivered our project on time.",
-								rating: 5
-							},
-							{
-								name: "Sarah M.",
-								role: "CTO at HealthTech",
-								review: "Outstanding Android development team. They understood our requirements perfectly.",
-								rating: 5
-							},
-							{
-								name: "Michael R.",
-								role: "Founder at TechStartup",
-								review: "Professional, responsive and delivered high-quality code.",
-								rating: 5
-							}
-						].map((testimonial, idx) => (
-							<Card key={idx} className="p-6 bg-black/50 backdrop-blur border-white/10">
-								<div className="flex items-center gap-4 mb-4">
-									<div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] flex items-center justify-center text-black font-bold">
-										{testimonial.name[0]}
-									</div>
-									<div>
-										<h4 className="font-semibold">{testimonial.name}</h4>
-										<p className="text-sm text-gray-400">{testimonial.role}</p>
-									</div>
-								</div>
-								<p className="text-gray-300">{testimonial.review}</p>
-								<div className="mt-4 flex gap-1">
-									{Array.from({ length: testimonial.rating }).map((_, i) => (
-										<span key={i} className="text-[#02f8b5]">★</span>
-									))}
-								</div>
-							</Card>
-						))}
+					<div className="text-center mb-16">
+						<h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+							What Clients Say
+						</h1>
+						<div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+						<p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+							Trusted by leading companies worldwide
+						</p>
 					</div>
+
+					<TestimonialCarousel testimonials={sampleTestimonials} />
 				</div>
 			</section>
 
 			{/* FAQ */}
 			<section className="py-16">
 				<div className="max-w-6xl mx-auto px-6 lg:px-8">
-					  <h3 className="text-xl font-semibold">FAQs</h3>
+					<h3 className="text-xl font-semibold">FAQs</h3>
 					<div className="mt-6 space-y-4">
 						{[
 							{
 								q: "What does an Android app development company do?",
-								a: "An Android app development company specializes in designing, developing, testing, and deploying mobile applications for the Android platform. We handle everything from initial concept and UI/UX design to development, testing, deployment, and post-launch maintenance."
+								a: "For devices using the Android operating system, an Android developer is in charge of creating applications. An Android developer must pay close attention to the application's compatibility with various Android versions and device kinds due to the fragmentation of this ecosystem."
 							},
 							{
 								q: "How much does it cost to make an Android App?",
-								a: "The cost varies depending on app complexity, features, and requirements. Simple apps might start from $15,000, while complex enterprise solutions can range from $50,000 to $200,000+. We provide detailed quotes after understanding your specific needs."
+								a: "The cost to develop an android application ranges from $30,000 to $250,000, with an average cost of $171,450, according to the most recent statistics from the industry. Remember that these costs are simply estimates and that depending on the specifications of the specific project, they may turn out to be much higher or lower."
 							},
 							{
 								q: "Which tools and technologies do you use?",
-								a: "We use modern Android development tools including Kotlin/Java, Android Studio, Flutter, React Native, and various SDKs. Our tech stack is chosen based on project requirements to ensure optimal performance and maintainability."
+								a: "The main programming languages used in creating Android mobile apps are Java, Kotlin, Python, R programming, C++, HTML5, and C#. Swift, Objective-C, C#, and HTML5 are some of the programming languages used to power iOS mobile apps."
 							},
 							{
-								q: "Does Meta App Coders offer a free consultation or quote?",
-								a: "Yes, we offer free initial consultations to discuss your project requirements, provide technical insights, and develop a preliminary project plan. This helps us provide accurate quotes and timelines."
+								q: "Does Elite Technology offer a free consultation or quote?",
+								a: "Yes. You can get in touch with us and we'll work together to discuss your idea. We seek to advance startup companies by providing insightful data. We offer free consultations that are focused on comprehending your idea and goal."
 							}
 						].map((faq, i) => (
 							<Card key={i} className="bg-black/50 backdrop-blur border-white/10 overflow-hidden hover:border-[#02f8b5]/50 transition-colors">
@@ -357,10 +402,12 @@ export default function AndroidPage() {
 					</div>
 
 					<div>
-						<Link href="/contactus">
-							<ShimmerButton className="px-8 py-3">
-								Start Your Project
-							</ShimmerButton>
+						<Link
+							href="/contactus"
+							className="inline-block rounded-full px-6 py-3 font-semibold text-black"
+							style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+						>
+							Start Your Project
 						</Link>
 					</div>
 				</div>

@@ -7,7 +7,7 @@ const servicesData: Service[] = [
   {
     id: 1,
     title: "Android App Development",
-    description: "Looking to build a successful Android application for your business? Need a scalable and high-performing solution? Look no further! Meta App Coders guarantees unique and fully capable Android app development services that not only digitally transform your business but also let you stay ahead of your competition.",
+    description: "Looking to build a successful Android application for your business? Need a scalable and high-performing solution? Look no further! We guarantee unique and fully capable Android app development services that not only digitally transform your business but also let you stay ahead of your competition.",
     technologies: [{ name: "Android", logo: "androidstudio.svg" }, { name: "Google Fit", logo: "googlefit.svg" }, { name: "Auto", logo: "androidauto.svg" }, { name: "ARCore", logo: "arcore.svg" }],
     category: "Mobile",
     url: "android-app-development"
@@ -23,7 +23,7 @@ const servicesData: Service[] = [
   {
     id: 3,
     title: "React Native App Development",
-    description: "Build an app that delights users with a feature-rich and branded-looking mobile app for both iOS and Android platforms. Meta App Coders, a React Native app development company, gives perfect app development solutions that not only save time and cost of app development but also tune your business into a successful app faster.",
+    description: "Build an app that delights users with a feature-rich and branded-looking mobile app for both iOS and Android platforms. We are a React Native app development company, gives perfect app development solutions that not only save time and cost of app development but also tune your business into a successful app faster.",
     technologies: [{ name: "Redux", logo: "redux.svg" }, { name: "JavaScript", logo: "javaScript.svg" }, { name: "Firebase", logo: "firebase.svg" }, { name: "XCode", logo: "xcode.svg" }],
     category: "Cross-Platform",
     url: "react-native-app-development"

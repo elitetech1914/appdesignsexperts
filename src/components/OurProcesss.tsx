@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, Target, PenTool, Compass, Wrench, CloudUpload, CheckSquare, Box } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const STEPS = [
   { id: 1, title: 'Discover', desc: 'Research & insight', Icon: Search },
@@ -33,19 +34,29 @@ export default function OurProcess() {
           <div className="absolute left-6 top-0 bottom-0 w-[4px] rounded-full" style={{ background: 'linear-gradient(180deg,#02f8b5,#1cd9ff)' }} />
 
           <div className="space-y-6 pl-16 pr-4">
-            {STEPS.map((step) => (
-              <div key={step.id} className="flex items-start gap-4">
-                {/* icon placed close to the line */}
-                <div className="-ml-10 w-12 h-12 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.28))', border: '1px solid rgba(255,255,255,0.03)' }}>
-                  <step.Icon size={18} strokeWidth={1.7} className="text-[#02f8b5]" />
-                </div>
+            {STEPS.map((step, idx) => {
+              const fromLeft = idx % 2 === 0;
+              return (
+                <motion.div
+                  key={step.id}
+                  className="flex items-start gap-4"
+                  initial={{ x: fromLeft ? -300 : 300, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, ease: 'easeOut', delay: idx * 0.06 }}
+                >
+                  {/* icon placed close to the line */}
+                  <div className="-ml-10 w-12 h-12 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.28))', border: '1px solid rgba(255,255,255,0.03)' }}>
+                    <step.Icon size={18} strokeWidth={1.7} className="text-[#02f8b5]" />
+                  </div>
 
-                <div>
-                  <h4 className="text-base font-semibold text-slate-100">{step.title}</h4>
-                  <p className="mt-1 text-sm text-slate-300">{step.desc}</p>
-                </div>
-              </div>
-            ))}
+                  <div>
+                    <h4 className="text-base font-semibold text-slate-100">{step.title}</h4>
+                    <p className="mt-1 text-sm text-slate-300">{step.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
@@ -63,7 +74,13 @@ export default function OurProcess() {
                   {/* LEFT CELL */}
                   <div className="sm:col-span-1 flex items-start justify-end sm:pr-2">
                     {isLeft ? (
-                      <div className="max-w-xs text-right">
+                      <motion.div
+                        className="max-w-xs text-right"
+                        initial={{ x: -500, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.8, ease: 'easeOut', delay: idx * 0.06 }}
+                      >
                         <div className="inline-flex items-center gap-3">
                           <div>
                             <h4 className="text-lg font-semibold text-slate-100">{step.title}</h4>
@@ -73,7 +90,7 @@ export default function OurProcess() {
                             <step.Icon size={18} strokeWidth={1.7} className="text-[#02f8b5]" />
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     ) : (
                       <div className="hidden sm:block" />
                     )}
@@ -82,7 +99,14 @@ export default function OurProcess() {
                   {/* CENTER CELL (narrow) - node sits here */}
                   <div className="sm:col-span-1 flex justify-center">
                     <div className="relative flex flex-col items-center">
-                      <div className="w-3 h-3 rounded-full bg-[#020202] border-2" style={{ borderColor: '#02f8b5', boxShadow: '0 8px 18px rgba(2,248,181,0.06)' }} />
+                      <motion.div
+                        className="w-3 h-3 rounded-full bg-[#020202] border-2"
+                        style={{ borderColor: '#02f8b5', boxShadow: '0 8px 18px rgba(2,248,181,0.06)' }}
+                        initial={{ scale: 0.6, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, delay: idx * 0.04 }}
+                      />
 
                       {/* mobile row: icon & content displayed inline (hidden on sm+) */}
                     </div>
@@ -91,15 +115,21 @@ export default function OurProcess() {
                   {/* RIGHT CELL */}
                   <div className="sm:col-span-1 flex items-start justify-start sm:pl-2">
                     {!isLeft ? (
-                      <div className="max-w-xs text-left inline-flex items-center gap-3">
-                        <div className="w-11 h-11 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.28))', border: '1px solid rgba(255,255,255,0.03)' }}>
+                      <motion.div
+                        className="max-w-xs text-left inline-flex items-center gap-3"
+                        initial={{ x: 500, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.8, ease: 'easeOut', delay: idx * 0.06 }}
+                      >
+                        <div className="w-11 h-11 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.28))', border: '1px solid rgba(255,255,255,0.03)'}}>
                           <step.Icon size={18} strokeWidth={1.7} className="text-[#02f8b5]" />
                         </div>
                         <div>
                           <h4 className="text-lg font-semibold text-slate-100">{step.title}</h4>
                           <p className="mt-1 text-sm text-slate-300">{step.desc}</p>
                         </div>
-                      </div>
+                      </motion.div>
                     ) : (
                       <div className="hidden sm:block" />
                     )}

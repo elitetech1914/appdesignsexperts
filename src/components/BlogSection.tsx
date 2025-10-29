@@ -13,34 +13,34 @@ const POSTS: Post[] = [
     id: 1,
     title: "What makes Agile Methodology so essential for every project?",
     excerpt:
-      "In today’s rapidly evolving business landscape, static methodologies like waterfall struggle to keep up. Meta App Coders understands the need for adaptability in project management.",
+      "In today’s rapidly evolving business landscape, static methodologies like waterfall struggle to keep up. We understand the need for adaptability in project management.",
     href: "#",
   },
   {
     id: 2,
     title: "Difference between web application and mobile application",
     excerpt:
-      "In a rapidly advancing technological landscape, businesses face a critical decision: mobile app or web app? Meta App Coders navigates this choice with precision so your digital strategy aligns with your goals.",
+      "In a rapidly advancing technological landscape, businesses face a critical decision: mobile app or web app? We navigate this choice with precision so your digital strategy aligns with your goals.",
     href: "#",
   },
   {
     id: 3,
     title: "Streamlining Development: HTML, Bootstrap, and DevOps for Powerful Web Applications",
     excerpt:
-      "User experience reigns supreme. Meta App Coders offers a comprehensive guide to leverage HTML, Bootstrap, and DevOps for creating online applications that excel in form and function.",
+      "User experience reigns supreme. We offer a comprehensive guide to leverage HTML, Bootstrap, and DevOps for creating online applications that excel in form and function.",
     href: "#",
   },
   {
     id: 4,
     title: "Hybrid Mobile Applications vs Native Mobile Applications",
     excerpt:
-      "Having a mobile app for your business is essential. Meta App Coders offers expert guidance to help you navigate the mobile app market and harness the full potential of mobile technology.",
+      "Having a mobile app for your business is essential. We offer expert guidance to help you navigate the mobile app market and harness the full potential of mobile technology.",
     href: "#",
   },
   {
     id:5,
     title:"Hybrid vs Native Mobile Applications - Pros and Cons",
-    excerpt:"In the realm of mobile app development, the decision between native and hybrid approaches is crucial. Meta App Coders understands the intricacies involved and guides you through the process, considering factors like project requirements, budget constraints, and target audience. This article delves into the nuances of native and hybrid mobile applications, examining their advantages, drawbacks, and the potential benefits for your business.",
+    excerpt:"In the realm of mobile app development, the decision between native and hybrid approaches is crucial. We understand the intricacies involved and guides you through the process, considering factors like project requirements, budget constraints, and target audience. This article delves into the nuances of native and hybrid mobile applications, examining their advantages, drawbacks, and the potential benefits for your business.",
     href: "#"
   }
 ];

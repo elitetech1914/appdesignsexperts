@@ -15,7 +15,7 @@ const Footer = () => {
               {/* Replace with your actual logo */}
               <Image
                 src="/images/logo.png"
-                alt="Meta App Coders Logo"
+                alt="Logo"
                 width={281}
                 height={81}
                 className="w-40"
@@ -116,7 +116,7 @@ const Footer = () => {
                 <svg className="h-6 w-6 text-[#02f8b5] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:info@metaappcoders.com" className="text-gray-400 hover:text-[#02f8b5] transition-colors">
+                <a href="mailto:info@elitetechnology.com" className="text-gray-400 hover:text-[#02f8b5] transition-colors">
                   info@elitetechnology.com
                 </a>
               </li>

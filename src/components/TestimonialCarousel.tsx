@@ -142,7 +142,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
       <Star
         key={i}
         className={`h-4 w-4 ${
-          i < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-600'
+          i < rating ? 'fill-cyan-400 text-cyan-400' : 'text-gray-600'
         }`}
       />
     ));
@@ -164,7 +164,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
                   <p className="font-semibold">{testimonials[0]?.name}</p>
                   <p className="text-sm text-slate-400">{testimonials[0]?.role}</p>
                 </div>
-                <div className="flex text-yellow-400">
+                <div className="flex text-cyan-400">
                   {renderStars(testimonials[0]?.rating || 5)}
                 </div>
               </div>
