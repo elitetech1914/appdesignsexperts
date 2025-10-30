@@ -1,8 +1,8 @@
 // components/TestimonialCarousel.tsx
 "use client";
 
-import React, { useRef, useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import React, { useRef, useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -20,155 +20,189 @@ interface TestimonialCarouselProps {
   testimonials: Testimonial[];
 }
 
-const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ 
-  testimonials 
-}) => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials }) => {
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const autoScrollRef = useRef<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
-  const currentIndexRef = useRef(0);
 
-  // Set mounted state to true after component mounts on client
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // measured card width (includes gap) — determined by ResizeObserver
+  const cardWidthRef = useRef<number>(0);
+  const currentIndexRef = useRef<number>(0);
 
-  // Duplicate testimonials for seamless infinite loop
+  // duplicate for infinite feel (prefix + middle + suffix)
   const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+  const baseIndexOffset = testimonials.length;
 
-  const getCardWidth = () => {
-    // Card width + margin (w-full max-w-3xl + gap-6)
-    return 768 + 24; // Approximate width including margin
+  useEffect(() => setIsMounted(true), []);
+
+  // get computed gap from container (px)
+  const getContainerGap = (container: HTMLElement | null) => {
+    if (!container) return 0;
+    const style = window.getComputedStyle(container);
+    const gap = parseFloat(style.gap || style.columnGap || "0") || 0;
+    return gap;
   };
 
-  const scrollToIndex = (index: number, behavior: 'smooth' | 'auto' = 'smooth') => {
-    if (!scrollContainerRef.current) return;
-    
+  // compute card width using first .carousel-card element or container fallback
+  const computeCardWidth = (): number => {
     const container = scrollContainerRef.current;
-    const cardWidth = getCardWidth();
-    const scrollPosition = index * cardWidth;
-    
-    container.scrollTo({
-      left: scrollPosition,
-      behavior: behavior
-    });
-
-    currentIndexRef.current = index;
-    updateArrowVisibility();
+    if (!container) return 0;
+    const first = container.querySelector<HTMLElement>(".carousel-card");
+    if (first) {
+      const w = first.getBoundingClientRect().width;
+      const gap = getContainerGap(container);
+      return Math.round(w + gap);
+    }
+    // fallback: use container width (assume 1 card per view)
+    const fallback = Math.round(container.getBoundingClientRect().width);
+    return fallback;
   };
 
-  const scroll = (direction: 'left' | 'right') => {
-    const totalTestimonials = testimonials.length;
-    let newIndex;
-    
-    if (direction === 'right') {
-      newIndex = (currentIndexRef.current + 1) % totalTestimonials;
-    } else {
-      newIndex = currentIndexRef.current - 1;
-      if (newIndex < 0) newIndex = totalTestimonials - 1;
-    }
+  // scroll to logical index (0..n-1)
+  const scrollToIndex = (indexRelative: number, behavior: ScrollBehavior = "smooth") => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const cardWidth = cardWidthRef.current || computeCardWidth();
+    if (!cardWidth) return;
+    const absoluteIndex = baseIndexOffset + indexRelative;
+    container.scrollTo({ left: Math.round(absoluteIndex * cardWidth), behavior });
+    currentIndexRef.current = ((indexRelative % testimonials.length) + testimonials.length) % testimonials.length;
+  };
 
-    scrollToIndex(newIndex);
+  const scrollRightOne = () => {
+    const next = (currentIndexRef.current + 1) % testimonials.length;
+    scrollToIndex(next);
     resetAutoScroll();
   };
-
-  const updateArrowVisibility = () => {
-    if (!scrollContainerRef.current) return;
+  const scrollLeftOne = () => {
+    const prev = (currentIndexRef.current - 1 + testimonials.length) % testimonials.length;
+    scrollToIndex(prev);
+    resetAutoScroll();
   };
+  const handleArrow = (direction: "left" | "right") =>
+    direction === "left" ? scrollLeftOne() : scrollRightOne();
 
+  // react to manual scrolling and keep currentIndexRef in sync
   const handleScroll = () => {
-    if (!scrollContainerRef.current) return;
-    
     const container = scrollContainerRef.current;
-    const cardWidth = getCardWidth();
-    const scrollPosition = container.scrollLeft;
-    const newIndex = Math.round(scrollPosition / cardWidth) % testimonials.length;
-    
-    currentIndexRef.current = newIndex;
-    updateArrowVisibility();
+    if (!container) return;
+    const cardWidth = cardWidthRef.current || computeCardWidth();
+    if (!cardWidth) return;
+    const absoluteIndexFloat = container.scrollLeft / cardWidth;
+    const absoluteIndex = Math.round(absoluteIndexFloat);
+    const relative = ((absoluteIndex - baseIndexOffset) % testimonials.length + testimonials.length) % testimonials.length;
+    currentIndexRef.current = relative;
   };
 
-  // Auto-scroll to next testimonial
+  // auto-scroll controls
   const startAutoScroll = () => {
-    if (autoScrollRef.current) {
-      clearInterval(autoScrollRef.current);
+    if (autoScrollRef.current != null) {
+      window.clearInterval(autoScrollRef.current);
+      autoScrollRef.current = null;
     }
-
-    autoScrollRef.current = setInterval(() => {
-      if (!isPaused && scrollContainerRef.current) {
-        scroll('right');
-      }
-    }, 4000); // Scroll every 4 seconds for testimonials
+    autoScrollRef.current = window.setInterval(() => {
+      if (!isPaused) scrollRightOne();
+    }, 4000) as unknown as number;
   };
 
   const resetAutoScroll = () => {
-    if (autoScrollRef.current) {
-      clearInterval(autoScrollRef.current);
+    if (autoScrollRef.current != null) {
+      window.clearInterval(autoScrollRef.current);
+      autoScrollRef.current = null;
     }
     startAutoScroll();
   };
 
-  const pauseAutoScroll = () => {
-    setIsPaused(true);
-  };
+  const pauseAutoScroll = () => setIsPaused(true);
+  const resumeAutoScroll = () => setIsPaused(false);
 
-  const resumeAutoScroll = () => {
-    setIsPaused(false);
-  };
-
-  // Initialize auto-scroll only on client side
+  // measure card width via ResizeObserver and only scroll to middle when valid width found
   useEffect(() => {
-    if (isMounted) {
-      startAutoScroll();
-      
-      // Reset to middle section for infinite scroll
-      if (scrollContainerRef.current) {
-        const middleSection = testimonials.length;
-        scrollToIndex(middleSection, 'auto');
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const ro = new ResizeObserver(() => {
+      const measured = computeCardWidth();
+      if (measured > 10) {
+        cardWidthRef.current = measured;
+        // center to middle chunk on first measurement (only once)
+        // use a tiny timeout to ensure layout stabilized (images/fonts)
+        window.setTimeout(() => {
+          if (!scrollContainerRef.current) return;
+          scrollContainerRef.current.scrollTo({ left: Math.round(baseIndexOffset * measured), behavior: "auto" });
+          currentIndexRef.current = 0;
+        }, 30);
       }
-    }
-    
-    return () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
+    });
+
+    // observe the first card if present, otherwise observe container
+    const elToObserve = container.querySelector<HTMLElement>(".carousel-card") || container;
+    ro.observe(elToObserve as Element);
+
+    // start auto-scroll after measurement stabilizes
+    const startId = window.setTimeout(() => {
+      startAutoScroll();
+    }, 200);
+
+    const onResize = () => {
+      // recompute width and recentre on current logical index
+      const w = computeCardWidth();
+      if (w > 10) {
+        cardWidthRef.current = w;
+        if (scrollContainerRef.current) {
+          const absolute = baseIndexOffset + currentIndexRef.current;
+          scrollContainerRef.current.scrollTo({ left: Math.round(absolute * w), behavior: "auto" });
+        }
       }
     };
-  }, [isMounted, testimonials, isPaused]);
+    window.addEventListener("resize", onResize);
 
-  // Render stars for rating
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        className={`h-4 w-4 ${
-          i < rating ? 'fill-cyan-400 text-cyan-400' : 'text-gray-600'
-        }`}
-      />
+    return () => {
+      ro.disconnect();
+      window.clearTimeout(startId);
+      if (autoScrollRef.current != null) {
+        window.clearInterval(autoScrollRef.current);
+        autoScrollRef.current = null;
+      }
+      window.removeEventListener("resize", onResize);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMounted, testimonials.length]);
+
+  // stars
+  const renderStars = (rating: number) =>
+    Array.from({ length: 5 }, (_, i) => (
+      <Star key={i} className={`h-4 w-4 ${i < rating ? "fill-cyan-400 text-cyan-400" : "text-gray-600"}`} />
     ));
-  };
 
-  // Don't render the interactive parts until mounted on client
+  // server-safe small card until mounted
   if (!isMounted) {
+    const t = testimonials[0] || {
+      id: "0",
+      name: "Loading",
+      role: "",
+      avatar: "",
+      rating: 5,
+      quote: "",
+    };
     return (
-      <div className="mt-20 flex items-center justify-center">
+      <div className="mt-20 flex items-center justify-center px-4">
         <Card className="w-full max-w-3xl bg-gradient-to-r from-zinc-900/60 to-black/60 border border-zinc-800 p-6">
-          <div className="flex items-center gap-6">
-            <Avatar>
-              <AvatarImage src={testimonials[0]?.avatar} alt="avatar" />
-              <AvatarFallback>{testimonials[0]?.name?.charAt(0)}</AvatarFallback>
+          <div className="flex items-center gap-4 sm:gap-6">
+            <Avatar className="h-12 w-12">
+              <AvatarImage src={t.avatar} alt={t.name} />
+              <AvatarFallback>{t.name?.charAt(0)}</AvatarFallback>
             </Avatar>
             <div className="flex-1">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-semibold">{testimonials[0]?.name}</p>
-                  <p className="text-sm text-slate-400">{testimonials[0]?.role}</p>
+                  <p className="font-semibold">{t.name}</p>
+                  <p className="text-sm text-slate-400">{t.role}</p>
                 </div>
-                <div className="flex text-cyan-400">
-                  {renderStars(testimonials[0]?.rating || 5)}
-                </div>
+                <div className="flex text-cyan-400">{renderStars(t.rating)}</div>
               </div>
-              <p className="mt-4 text-slate-300">&quot;{testimonials[0]?.quote}&quot;</p>
+              <p className="mt-4 text-slate-300">&quot;{t.quote}&quot;</p>
             </div>
           </div>
         </Card>
@@ -177,55 +211,57 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
   }
 
   return (
-    <div 
+    <div
       className="mt-14 relative"
       onMouseEnter={pauseAutoScroll}
       onMouseLeave={resumeAutoScroll}
       onTouchStart={pauseAutoScroll}
       onTouchEnd={resumeAutoScroll}
     >
-      {/* Left Arrow Button */}
+      {/* desktop arrows */}
       <button
-        onClick={() => scroll('left')}
-        className="absolute -left-7 top-[40%] transform -translate-y-1/2 z-20 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black rounded-full p-3 transition-all duration-300 shadow-lg hover:scale-110 hover:shadow-xl"
+        onClick={() => handleArrow("left")}
         aria-label="Previous testimonial"
+        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black rounded-full p-3 ml-2 transition-transform duration-200 shadow-lg hover:scale-110"
       >
-        <ChevronLeft className="h-6 w-6 pr-[2px]"/>
+        <ChevronLeft className="h-6 w-6" />
       </button>
 
-      {/* Scroll Container */}
       <div
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="flex overflow-hidden scrollbar-hide scroll-smooth gap-6 px-12"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className="flex overflow-x-auto snap-x snap-mandatory touch-pan-x gap-6 px-4 sm:px-8 py-2 scroll-smooth"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {duplicatedTestimonials.map((testimonial, index) => (
+        {duplicatedTestimonials.map((testimonial, idx) => (
           <div
-            key={`${testimonial.id}-${index}`}
-            className="flex-shrink-0 w-full max-w-3xl transform transition-all duration-300 hover:scale-105 py-6"
+            key={`${testimonial.id}-${idx}`}
+            className="carousel-card snap-center flex-shrink-0"
+            style={{ minWidth: "min(92vw,720px)" }}
+            aria-hidden={false}
           >
             <Card className="w-full bg-gradient-to-r from-zinc-900/60 to-black/60 border border-zinc-800 p-6">
-              <div className="flex items-center gap-6">
-                <Avatar className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 border-2 border-cyan-400">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                <Avatar className="h-14 w-14 sm:h-20 sm:w-20 border-2 border-cyan-400">
                   <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                   <AvatarFallback>
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    {testimonial.name.split(" ").map((n) => n[0]).join("")}
                   </AvatarFallback>
                 </Avatar>
+
                 <div className="flex-1">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-start sm:items-center justify-between">
                     <div>
                       <p className="font-semibold text-white">{testimonial.name}</p>
                       <p className="text-sm text-slate-400">
                         {testimonial.role}
-                        {testimonial.company && `, ${testimonial.company}`}
+                        {testimonial.company ? `, ${testimonial.company}` : ""}
                       </p>
                     </div>
-                    <div className="flex gap-2">
-                      {renderStars(testimonial.rating)}
-                    </div>
+
+                    <div className="flex gap-1 mt-3 sm:mt-0">{renderStars(testimonial.rating)}</div>
                   </div>
+
                   <p className="mt-4 text-sm text-slate-300">&quot;{testimonial.quote}&quot;</p>
                 </div>
               </div>
@@ -234,33 +270,41 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
         ))}
       </div>
 
-      {/* Right Arrow Button */}
+      {/* desktop right arrow */}
       <button
-        onClick={() => scroll('right')}
-        className="absolute -right-7 top-[40%] transform -translate-y-1/2 z-20 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black rounded-full p-3 transition-all duration-300 shadow-lg hover:scale-110 hover:shadow-xl"
+        onClick={() => handleArrow("right")}
         aria-label="Next testimonial"
+        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black rounded-full p-3 mr-2 transition-transform duration-200 shadow-lg hover:scale-110"
       >
-        <ChevronRight className="h-6 w-6 pl-[2px]" />
+        <ChevronRight className="h-6 w-6" />
       </button>
 
+      {/* mobile tiny arrows */}
+      <div className="flex md:hidden gap-2 justify-between px-6 mt-4">
+        <button onClick={() => handleArrow("left")} aria-label="Previous testimonial" className="bg-zinc-800/60 text-white rounded-full p-2 shadow-sm">
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+        <button onClick={() => handleArrow("right")} aria-label="Next testimonial" className="bg-zinc-800/60 text-white rounded-full p-2 shadow-sm">
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      </div>
 
-      {/* Dots indicator */}
-      <div className="flex justify-center mt-8 space-x-2">
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              scrollToIndex(index);
-              resetAutoScroll();
-            }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndexRef.current % testimonials.length
-                ? 'bg-[#02f8b5]'
-                : 'bg-gray-600'
-            }`}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
-        ))}
+      {/* dots */}
+      <div className="flex justify-center mt-6 space-x-2 px-2">
+        {testimonials.map((_, idx) => {
+          const isActive = idx === (currentIndexRef.current % testimonials.length);
+          return (
+            <button
+              key={idx}
+              onClick={() => {
+                scrollToIndex(idx);
+                resetAutoScroll();
+              }}
+              aria-label={`Go to testimonial ${idx + 1}`}
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${isActive ? "bg-[#02f8b5]" : "bg-gray-600"}`}
+            />
+          );
+        })}
       </div>
 
       <style jsx>{`

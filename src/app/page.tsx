@@ -12,6 +12,7 @@ import LetsTalkSection from "@/components/LetsTalkSection";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { Award } from "lucide-react";
 import OurNumbersSection from "@/components/OurNumbersSection";
+import Link from "next/link";
 
 const awardslogos = [
   { src: '/images/AwardsLogos/designrush.png', alt: 'DesignRush', width: 228, height: 228},
@@ -89,6 +90,7 @@ export default function Home() {
           </p>
         </div>
         <div className="max-sm:flex-col mt-3 flex gap-5 items-center">
+          <Link href="/contactus">
           <ShimmerButton
             shimmerColor={'rgba(0, 0, 0, 0.9)'}
             shimmerDuration={'2s'}
@@ -99,11 +101,14 @@ export default function Home() {
               DISCUSS WITH A CONSULTANT
             </span>
           </ShimmerButton>
+            </Link>
+            <Link href="/portfolio">
           <ShimmerButton shimmerColor={'#02f8b5'} shimmerDuration={'2s'} className="shadow-2xl">
             <span className="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-white lg:text-lg dark:from-white dark:to-slate-900/10">
               OUR WORK
             </span>
           </ShimmerButton>
+            </Link>
 
         </div>
         <div className="absolute max-sm:-bottom-30 -bottom-50 left-1/2 -translate-x-1/2 w-screen">

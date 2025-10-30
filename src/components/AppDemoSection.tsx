@@ -1,5 +1,3 @@
-
-
 const AppDemoSection = () => {
   return (
     <div className="flex flex-col">
@@ -9,9 +7,9 @@ const AppDemoSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black to-[#007483]" />
         {/* Content with phone mockup */}
         <div className="relative max-w-7xl mx-auto w-full px-4">
-          <div className="grid grid-cols-3 lg:grid-cols-3 gap-8 items-center min-h-screen">
-            {/* Left content */}
-            <div className="text-white space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-screen">
+            {/* Left content - hidden on mobile */}
+            <div className="hidden lg:block text-white space-y-6">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">
                 Left Side Content
               </h2>
@@ -30,19 +28,20 @@ const AppDemoSection = () => {
               </ul>
             </div>
 
-            {/* Center - Phone mockup */}
-            <div 
-              className="bg-fixed w-full h-screen bg-no-repeat bg-center col-span-1" 
-              style={{ 
+            {/* Center - Phone mockup (keeps bg-fixed + inline minHeight; bigger on mobile) */}
+            <div
+              className="bg-fixed w-full h-screen bg-no-repeat bg-center bg-[length:350%] lg:bg-[length:75%] col-span-1"
+              style={{
                 backgroundImage: "url('/images/PhoneMockup1.png')",
-                backgroundSize: '75%',
-                backgroundPosition: 'center 100%',
-                minHeight: '800px'
+                /* preserve the illusion */
+                minHeight: '800px',
+                /* keep the art anchored toward bottom to match phone border */
+                backgroundPosition: 'center 100%'
               }}
             />
 
-            {/* Right content */}
-            <div className="text-white space-y-6">
+            {/* Right content - hidden on mobile */}
+            <div className="hidden lg:block text-white space-y-6">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">
                 Right Side Content
               </h2>
@@ -71,8 +70,8 @@ const AppDemoSection = () => {
         {/* Content with phone mockup */}
         <div className="relative max-w-7xl mx-auto w-full px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-screen">
-            {/* Left content */}
-            <div className="text-white space-y-6">
+            {/* Left content - hidden on mobile */}
+            <div className="hidden lg:block text-white space-y-6">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">
                 Key Features
               </h2>
@@ -91,19 +90,18 @@ const AppDemoSection = () => {
               </div>
             </div>
 
-            {/* Center - Phone mockup */}
-            <div 
-              className="bg-fixed w-full h-screen bg-no-repeat bg-center col-span-1" 
-              style={{ 
+            {/* Center - Phone mockup (same size/border as first mockup; bigger on mobile) */}
+            <div
+              className="bg-fixed w-full h-screen bg-no-repeat bg-center bg-[length:350%] md:bg-[length:150%] lg:bg-[length:75%] col-span-1"
+              style={{
                 backgroundImage: "url('/images/PhoneMockup2.png')",
-                backgroundSize: '75%',
-                backgroundPosition: 'center 100%',
-                minHeight: '800px'
+                minHeight: '800px',
+                backgroundPosition: 'center 100%'
               }}
             />
 
-            {/* Right content */}
-            <div className="text-white space-y-6">
+            {/* Right content - hidden on mobile */}
+            <div className="hidden lg:block text-white space-y-6">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">
                 Why Choose Us
               </h2>
@@ -134,4 +132,4 @@ const AppDemoSection = () => {
   );
 }
 
-export default AppDemoSection
+export default AppDemoSection;
