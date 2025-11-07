@@ -33,7 +33,7 @@ export default function PortfolioPage(){
 
   return (
     <main className="bg-black text-white mt-10">
-      <div style={{ ["--accent-1" as string]: "#02f8b5", ["--accent-2" as string]: "#1cd9ff" }}>
+      <div style={{ ["--accent-1" as string]: "#1cd9ff", ["--accent-2" as string]: "#1cd9ff" }}>
         {/* ---------------- HERO / SHOWCASE ---------------- */}
         <section className="relative bg-black">
           <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 lg:py-24">
@@ -54,7 +54,7 @@ export default function PortfolioPage(){
                   <a
                     href="#contact"
                     className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                    style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+                    style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
                   >
                     TALK WITH CONSULTANT
                   </a>
@@ -137,7 +137,7 @@ export default function PortfolioPage(){
                   <div className="mt-4 flex items-center justify-between">
                     {p.caseStudy && <a
                       href={`/${p.caseStudy}`}
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black font-semibold text-sm"
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] text-black font-semibold text-sm"
                     >
                       View Case
                     </a>}

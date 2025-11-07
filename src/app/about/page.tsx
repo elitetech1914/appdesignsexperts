@@ -50,7 +50,7 @@ const AboutPage = () => {
           icon: <Zap className="w-4 h-4" />
         }
       ],
-      color: "from-[#02f8b5] to-[#1cd9ff]",
+      color: "from-[#1cd9ff] to-[#1cd9ff]",
       stats: "50+ Projects"
     },
     {
@@ -79,7 +79,7 @@ const AboutPage = () => {
           icon: <Globe className="w-4 h-4" />
         }
       ],
-      color: "from-[#1cd9ff] to-[#02f8b5]",
+      color: "from-[#1cd9ff] to-[#1cd9ff]",
       stats: "200+ Projects"
     }
   ];
@@ -99,12 +99,12 @@ const AboutPage = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="p-4 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] rounded-2xl">
+            <div className="p-4 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] rounded-2xl">
               <Rocket className="w-12 h-12 text-black" />
             </div>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-8">
-            We are <span className="text-[#02f8b5]">innovators</span>, 
+            We are <span className="text-[#1cd9ff]">innovators</span>, 
             <br />
             empowering the <span className="text-[#1cd9ff]">digital landscape</span>.
           </h1>
@@ -116,8 +116,8 @@ const AboutPage = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Calendar className="w-8 h-8 text-[#02f8b5]" />
-              <h2 className="text-4xl md:text-5xl font-bold text-[#02f8b5]">Our Journey</h2>
+              <Calendar className="w-8 h-8 text-[#1cd9ff]" />
+              <h2 className="text-4xl md:text-5xl font-bold text-[#1cd9ff]">Our Journey</h2>
             </div>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               From humble beginnings to becoming a trusted development partner
@@ -127,10 +127,10 @@ const AboutPage = () => {
           {/* Timeline Container */}
           <div className="relative">
             {/* Center Line - Desktop */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-[#02f8b5] to-[#1cd9ff] hidden lg:block z-0"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-[#1cd9ff] to-[#1cd9ff] hidden lg:block z-0"></div>
             
             {/* Mobile Progress Line */}
-            <div className="absolute left-4 md:left-8 top-0 w-0.5 h-full bg-gradient-to-b from-[#02f8b5] to-[#1cd9ff] lg:hidden z-0"></div>
+            <div className="absolute left-4 md:left-8 top-0 w-0.5 h-full bg-gradient-to-b from-[#1cd9ff] to-[#1cd9ff] lg:hidden z-0"></div>
 
             {/* Timeline Events */}
             <div className="space-y-16 lg:space-y-24 relative z-10">
@@ -149,10 +149,10 @@ const AboutPage = () => {
                       // 2020: Content on left
                       <div className="relative group ml-8 lg:ml-0">
                         {/* Connector Dot - Mobile */}
-                        <div className="absolute -left-8 lg:hidden w-4 h-4 bg-[#02f8b5] rounded-full border-4 border-gray-900 z-10 top-6"></div>
+                        <div className="absolute -left-8 lg:hidden w-4 h-4 bg-[#1cd9ff] rounded-full border-4 border-gray-900 z-10 top-6"></div>
                         
                         {/* Connector Dot - Desktop */}
-                        <div className="hidden lg:flex absolute top-8 -right-4 w-4 h-4 bg-[#02f8b5] rounded-full border-4 border-gray-900 z-10"></div>
+                        <div className="hidden lg:flex absolute top-8 -right-4 w-4 h-4 bg-[#1cd9ff] rounded-full border-4 border-gray-900 z-10"></div>
 
                         {/* Year Badge */}
                         <div className="flex items-center gap-4 mb-6">
@@ -166,7 +166,7 @@ const AboutPage = () => {
                         </div>
                         
                         {/* Main Event Card */}
-                        <div className="bg-gray-800 rounded-2xl p-6 border-l-4 border-[#02f8b5] hover:border-[#1cd9ff] transition-all duration-300">
+                        <div className="bg-gray-800 rounded-2xl p-6 border-l-4 border-[#1cd9ff] hover:border-[#1cd9ff] transition-all duration-300">
                           <h3 className="text-2xl font-bold text-white mb-3">{event.title}</h3>
                           <p className="text-gray-300 leading-relaxed">
                             {index === 0 
@@ -186,7 +186,7 @@ const AboutPage = () => {
                               className="bg-gray-800/50 rounded-xl p-4 hover:bg-gray-700/50 transition-all duration-300 group border-l-4 border-transparent hover:border-[#1cd9ff]"
                             >
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center group-hover:bg-[#02f8b5] group-hover:text-black transition-colors duration-300 flex-shrink-0">
+                                <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center group-hover:bg-[#1cd9ff] group-hover:text-black transition-colors duration-300 flex-shrink-0">
                                   {achievement.icon}
                                 </div>
                                 <div className='text-left'>
@@ -215,7 +215,7 @@ const AboutPage = () => {
                               className="bg-gray-800/50 rounded-xl p-4 hover:bg-gray-700/50 transition-all duration-300 group border-l-4 border-transparent hover:border-[#1cd9ff]"
                             >
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center group-hover:bg-[#02f8b5] group-hover:text-black transition-colors duration-300 flex-shrink-0">
+                                <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center group-hover:bg-[#1cd9ff] group-hover:text-black transition-colors duration-300 flex-shrink-0">
                                   {achievement.icon}
                                 </div>
                                 <div className='text-left'>
@@ -231,10 +231,10 @@ const AboutPage = () => {
                       // 2022: Content on right
                       <div className="relative group ml-8 lg:ml-0 lg:text-left">
                         {/* Connector Dot - Mobile */}
-                        <div className="absolute -left-8 lg:hidden w-4 h-4 bg-[#02f8b5] rounded-full border-4 border-gray-900 z-10 top-6"></div>
+                        <div className="absolute -left-8 lg:hidden w-4 h-4 bg-[#1cd9ff] rounded-full border-4 border-gray-900 z-10 top-6"></div>
                         
                         {/* Connector Dot - Desktop */}
-                        <div className="hidden lg:flex absolute top-8 -right-4 w-4 h-4 bg-[#02f8b5] rounded-full border-4 border-gray-900 z-10"></div>
+                        <div className="hidden lg:flex absolute top-8 -right-4 w-4 h-4 bg-[#1cd9ff] rounded-full border-4 border-gray-900 z-10"></div>
 
                         {/* Year Badge */}
                         <div className="flex items-center gap-4 mb-6 lg:justify-start">
@@ -248,7 +248,7 @@ const AboutPage = () => {
                         </div>
                         
                         {/* Main Event Card */}
-                        <div className="bg-gray-800 rounded-2xl p-6 border-l-4 border-[#02f8b5] hover:border-[#1cd9ff] transition-all duration-300">
+                        <div className="bg-gray-800 rounded-2xl p-6 border-l-4 border-[#1cd9ff] hover:border-[#1cd9ff] transition-all duration-300">
                           <h3 className="text-2xl font-bold text-white mb-3">{event.title}</h3>
                           <p className="text-gray-300 leading-relaxed">
                             {index === 0 
@@ -267,9 +267,9 @@ const AboutPage = () => {
 
           {/* Current Status */}
           <div className="mt-20 text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-800 rounded-full border border-[#02f8b5]">
-              <div className="w-3 h-3 bg-[#02f8b5] rounded-full animate-pulse"></div>
-              <span className="text-[#02f8b5] font-semibold">Continuing our journey of innovation</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-800 rounded-full border border-[#1cd9ff]">
+              <div className="w-3 h-3 bg-[#1cd9ff] rounded-full animate-pulse"></div>
+              <span className="text-[#1cd9ff] font-semibold">Continuing our journey of innovation</span>
             </div>
           </div>
         </div>
@@ -281,8 +281,8 @@ const AboutPage = () => {
           {/* Mission */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Target className="text-[#02f8b5] w-8 h-8" />
-              <h2 className="text-3xl font-bold text-[#02f8b5]">Our Mission</h2>
+              <Target className="text-[#1cd9ff] w-8 h-8" />
+              <h2 className="text-3xl font-bold text-[#1cd9ff]">Our Mission</h2>
             </div>
             <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               Our aim is to change people&apos;s lives and enhance businesses with our progressive and innovative technology solutions.
@@ -302,22 +302,22 @@ const AboutPage = () => {
           {/* Vision */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Eye className="text-[#02f8b5] w-8 h-8" />
-              <h2 className="text-3xl font-bold text-[#02f8b5]">Our Vision</h2>
+              <Eye className="text-[#1cd9ff] w-8 h-8" />
+              <h2 className="text-3xl font-bold text-[#1cd9ff]">Our Vision</h2>
             </div>
             <p className="text-2xl font-semibold text-[#1cd9ff] mb-6">
               Leading Web, Mobile & Software Development Company
             </p>
             
             <div className="flex items-center gap-3 mb-4">
-              <Heart className="text-[#02f8b5] w-6 h-6" />
-              <h3 className="text-xl font-bold text-[#02f8b5]">Our Values</h3>
+              <Heart className="text-[#1cd9ff] w-6 h-6" />
+              <h3 className="text-xl font-bold text-[#1cd9ff]">Our Values</h3>
             </div>
             <div className="flex flex-wrap gap-3">
               {values.map((value, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full text-sm hover:bg-[#02f8b5] hover:text-black transition-all duration-300 cursor-pointer group"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full text-sm hover:bg-[#1cd9ff] hover:text-black transition-all duration-300 cursor-pointer group"
                 >
                   {value.icon}
                   <span>{value.name}</span>
@@ -331,9 +331,9 @@ const AboutPage = () => {
       {/* Awards Section */}
       <section>
         <div className='text-center mt-12 flex flex-col gap-5 justify-center items-center px-6'>
-          <div className='flex gap-3 text-[#02f8b5]'>
+          <div className='flex gap-3 text-[#1cd9ff]'>
             <Award className='max-sm:hidden' size={40}/>
-            <h2 className="text-3xl mb-5 font-bold text-[#02f8b5]">Awards and Recognitions</h2>
+            <h2 className="text-3xl mb-5 font-bold text-[#1cd9ff]">Awards and Recognitions</h2>
           </div>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed px-6">
                 With the utmost priority of adding value to the projects we undertake, we ensure that our partners stay ahead of the clutter and achieve excellence.
@@ -354,7 +354,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff]">
+      <section className="py-20 px-4 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff]">
         <div className="max-w-4xl mx-auto text-center">
           <MessageCircle className="w-16 h-16 mx-auto mb-6 text-black" />
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">

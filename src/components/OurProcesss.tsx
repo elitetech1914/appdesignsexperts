@@ -80,7 +80,7 @@ function StepItemMobile({ step, idx }: { step: Step; idx: number }) {
             border: '1px solid rgba(255,255,255,0.03)',
           }}
         >
-          <Icon size={18} strokeWidth={1.7} className="text-[#02f8b5]" />
+          <Icon size={18} strokeWidth={1.7} className="text-[#1cd9ff]" />
         </div>
 
         <div>
@@ -97,10 +97,10 @@ export default function OurProcess() {
     <section className="bg-[#020202] text-white py-16">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold text-[#1cd9ff] mb-6">
             Our Process
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full" />
           <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
             We make your vision turn into a full-fledged reality while also providing personalized app services by
             adopting the latest technologies which are tailored according to your IT needs and expectations.
@@ -111,7 +111,7 @@ export default function OurProcess() {
         <div className="sm:hidden relative">
           <div
             className="absolute left-6 top-0 bottom-0 w-[4px] rounded-full"
-            style={{ background: 'linear-gradient(180deg,#02f8b5,#1cd9ff)' }}
+            style={{ background: 'linear-gradient(180deg,#1cd9ff,#1cd9ff)' }}
           />
           <div className="space-y-6 pl-16 pr-4">
             {STEPS.map((step, idx) => (
@@ -124,7 +124,7 @@ export default function OurProcess() {
         <div className="hidden sm:block relative mt-6">
           <div
             className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[4px] rounded-full"
-            style={{ background: 'linear-gradient(180deg,#02f8b5,#1cd9ff)', boxShadow: '0 6px 30px rgba(28, 217, 255, 0.06)' }}
+            style={{ background: 'linear-gradient(180deg,#1cd9ff,#1cd9ff)', boxShadow: '0 6px 30px #1cd9ff' }}
           />
 
           <div className="grid grid-cols-1 gap-y-8" style={{ gridTemplateColumns: '1fr 72px 1fr' }}>
@@ -151,11 +151,11 @@ export default function OurProcess() {
                           <div
                             className="w-11 h-11 rounded-lg flex items-center justify-center"
                             style={{
-                              background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.28))',
+                              background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02))',
                               border: '1px solid rgba(255,255,255,0.03)',
                             }}
                           >
-                            <step.Icon size={18} strokeWidth={1.7} className="text-[#02f8b5]" />
+                            <step.Icon size={18} strokeWidth={1.7} className="text-[#fc00ff]" />
                           </div>
                         </div>
                       </motion.div>
@@ -169,7 +169,7 @@ export default function OurProcess() {
                     <div className="relative flex flex-col items-center">
                       <motion.div
                         className="w-3 h-3 rounded-full bg-[#020202] border-2"
-                        style={{ borderColor: '#02f8b5', boxShadow: '0 8px 18px rgba(2,248,181,0.06)' }}
+                        style={{ borderColor: '#1cd9ff', boxShadow: '0 0px 18px #1cd9ff' }}
                         initial={{ scale: 0.6, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -195,7 +195,7 @@ export default function OurProcess() {
                             border: '1px solid rgba(255,255,255,0.03)',
                           }}
                         >
-                          <step.Icon size={18} strokeWidth={1.7} className="text-[#02f8b5]" />
+                          <step.Icon size={18} strokeWidth={1.7} className="text-[#fc00ff]" />
                         </div>
                         <div>
                           <h4 className="text-lg font-semibold text-slate-100">{step.title}</h4>

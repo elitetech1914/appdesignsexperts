@@ -19,9 +19,9 @@ export default function Page() {
       <LetsTalkSection />
       <section>
         <div className='text-center mt-12 flex flex-col gap-5 justify-center items-center px-6'>
-          <div className='flex gap-3 text-[#02f8b5]'>
+          <div className='flex gap-3 text-[#1cd9ff]'>
             <Award className='max-sm:hidden' size={40}/>
-            <h2 className="text-3xl mb-5 font-bold text-[#02f8b5]">Awards and Recognitions</h2>
+            <h2 className="text-3xl mb-5 font-bold text-[#1cd9ff]">Awards and Recognitions</h2>
           </div>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed px-6">
                 With the utmost priority of adding value to the projects we undertake, we ensure that our partners stay ahead of the clutter and achieve excellence.

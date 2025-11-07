@@ -68,7 +68,7 @@ export default function AndroidPage() {
                 <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="flex flex-col items-center text-center gap-6 relative z-10">
                         <div className="max-w-3xl">
-                            <h1 className="text-4xl sm:text-6xl font-bold leading-tight" style={{ color: "#02f8b5" }}>
+                            <h1 className="text-4xl sm:text-6xl font-bold leading-tight" style={{ color: "#1cd9ff" }}>
                                 Elevate your brand&apos;s visibility with Flutter App Development Company
                             </h1>
 
@@ -80,7 +80,7 @@ export default function AndroidPage() {
                                 <Link
                                     href="/contactus"
                                     className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                                    style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+                                    style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
                                 >
                                     Hire Flutter App Developers
                                 </Link>
@@ -120,10 +120,10 @@ export default function AndroidPage() {
             <section id="services" className="py-16 border-t border-white/6">
                 <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
                     <div className="text-center mb-16 mt-8">
-                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
                             Empower your business with our Flutter App Development services
                         </h1>
-                        <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                         <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
                             We are a leading flutter app development company that holds an empowering team of Flutter app developers to build robust and feature-rich applications to inspire not only our clients but also investors. We work on industry niches and are always thrilled to take up versatile projects. Hire our dedicated flutter developers to create a cross-platform app that successfully transforms your digital presence to full throttle.
                         </p>
@@ -147,8 +147,8 @@ export default function AndroidPage() {
                                 description: "Being a leading provider of flutter app development services, we make sure that your application is created to be bug-free and resilient to hackers. Our team of QA specialists ensures that the software is still change-proof regardless of market trends."
                             }
                         ].map((service, idx) => (
-                            <Card key={idx} className="p-4 bg-black backdrop-blur border-white/10 hover:border-[#02f8b5] transition-colors mx-auto text-center">
-                                <h4 className="font-semibold text-[#02f8b5]">{service.title}</h4>
+                            <Card key={idx} className="p-4 bg-black backdrop-blur border-white/10 hover:border-[#1cd9ff] transition-colors mx-auto text-center">
+                                <h4 className="font-semibold text-[#1cd9ff]">{service.title}</h4>
                                 <p className="text-sm text-gray-300">{service.description}</p>
                             </Card>
                         ))}
@@ -162,7 +162,7 @@ export default function AndroidPage() {
                                 <Button
                                     variant="ghost"
                                     onClick={() => setSelected('Technologies')}
-                                    className={`border border-[#02f8b5] ${selected === 'Technologies' ? 'bg-[#02f8b5] text-black' : 'hover:bg-black hover:text-[#00ab7d]'}`}>
+                                    className={`border border-[#1cd9ff] ${selected === 'Technologies' ? 'bg-[#1cd9ff] text-black' : 'hover:bg-black hover:text-[#00ab7d]'}`}>
                                     Technologies
                                 </Button>
                             </ButtonGroup>
@@ -170,10 +170,10 @@ export default function AndroidPage() {
                         {/* icons for the selected set */}
                         <div className="mt-6 flex flex-wrap justify-center gap-12">
                             {(techSets[selected] || []).map((tech, idx) => (
-                                <div key={idx} className="group hover:border-[#02f8b5]/50 transition-colors">
+                                <div key={idx} className="group hover:border-[#1cd9ff]/50 transition-colors">
                                     <div className="flex flex-col items-center justify-center p-4 bg-black">
                                         <Image src={tech.src} alt={tech.name} width={80} height={40} className="group-hover:scale-110 transition-transform" />
-                                        <p className="mt-2 text-xs text-gray-400 group-hover:text-[#02f8b5]">{tech.name}</p>
+                                        <p className="mt-2 text-xs text-gray-400 group-hover:text-[#1cd9ff]">{tech.name}</p>
                                     </div>
                                 </div>
                             ))}
@@ -186,10 +186,10 @@ export default function AndroidPage() {
             <section className="py-16 bg-gradient-to-r from-black via-[#02121a] to-black">
                 <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
                             Our Numbers
                         </h1>
-                        <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                         <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
                             Results that speak for themselves
                         </p>
@@ -202,7 +202,7 @@ export default function AndroidPage() {
                             { number: "50+", label: "Expert Developers" }
                         ].map((stat, idx) => (
                             <Card key={idx} className="p-6 bg-black/50 backdrop-blur border-white/10 text-center">
-                                <h4 className="text-3xl font-bold" style={{ color: "#02f8b5" }}>{stat.number}</h4>
+                                <h4 className="text-3xl font-bold" style={{ color: "#1cd9ff" }}>{stat.number}</h4>
                                 <p className="text-gray-300">{stat.label}</p>
                             </Card>
                         ))}
@@ -219,10 +219,10 @@ export default function AndroidPage() {
             <section className="py-16 border-t border-white/6 bg-black">
                 <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
                             Portfolio
                         </h1>
-                        <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                         <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
                             Selected Android apps we built for clients.
                         </p>
@@ -250,7 +250,7 @@ export default function AndroidPage() {
                                     {/* Text card separate from image */}
                                     <div className="px-4 pb-4 h-28 flex flex-col gap-2">
                                         <div>
-                                            <h5 className="font-semibold text-[#02f8b5]">{project.name}</h5>
+                                            <h5 className="font-semibold text-[#1cd9ff]">{project.name}</h5>
                                             <p className="text-sm text-gray-300">{project.category}</p>
                                         </div>
                                     </div>
@@ -262,7 +262,7 @@ export default function AndroidPage() {
                         <Link
                             href="/portfolio"
                             className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                            style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+                            style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
                         >
                             View All Projects
                         </Link>
@@ -274,10 +274,10 @@ export default function AndroidPage() {
             <section className="py-16 border-t border-white/6">
                 <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
                             Why Choose Us
                         </h1>
-                        <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                         <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
                             Expertise, commitment and proven results make us your ideal Android development partner.
                         </p>
@@ -285,22 +285,22 @@ export default function AndroidPage() {
 
                     <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <Card className="bg-black/50 backdrop-blur border-white/10 p-6">
-                            <h4 className="font-semibold text-[#02f8b5]">Client satisfaction</h4>
+                            <h4 className="font-semibold text-[#1cd9ff]">Client satisfaction</h4>
                             <p className="mt-2 text-sm text-gray-300">80% return client rate with long-lasting partnerships built on trust and results.</p>
                         </Card>
 
                         <Card className="bg-black/50 backdrop-blur border-white/10 p-6">
-                            <h4 className="font-semibold text-[#02f8b5]">Hack-proof software</h4>
+                            <h4 className="font-semibold text-[#1cd9ff]">Hack-proof software</h4>
                             <p className="mt-2 text-sm text-gray-300">Robust security measures and best practices to protect your app and users.</p>
                         </Card>
 
                         <Card className="bg-black/50 backdrop-blur border-white/10 p-6">
-                            <h4 className="font-semibold text-[#02f8b5]">On-time delivery</h4>
+                            <h4 className="font-semibold text-[#1cd9ff]">On-time delivery</h4>
                             <p className="mt-2 text-sm text-gray-300">Committed to timelines with transparent progress tracking and communication.</p>
                         </Card>
 
                         <Card className="bg-black/50 backdrop-blur border-white/10 p-6">
-                            <h4 className="font-semibold text-[#02f8b5]">Marketing support</h4>
+                            <h4 className="font-semibold text-[#1cd9ff]">Marketing support</h4>
                             <p className="mt-2 text-sm text-gray-300">End-to-end assistance from development to market success and growth.</p>
                         </Card>
                     </div>
@@ -311,10 +311,10 @@ export default function AndroidPage() {
             <section className="py-16 bg-black/50">
                 <div className="max-w-6xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                        <h1 className="text-5xl font-bold bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
                             What Clients Say
                         </h1>
-                        <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                         <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
                             Trusted by leading companies worldwide
                         </p>
@@ -343,10 +343,10 @@ export default function AndroidPage() {
                             a: "Flutter app development might cost you anything from $25,000 to $200,000. The factors that decide the overall Flutter App Development cost are -The Complexity of the AppHardware structureLevel of features involvedIn Design and Development, etc.Keep in mind, though, that this is merely an approximate estimate based on industry-standard development practices."
                             }
                         ].map((faq, i) => (
-                        <Card key={i} className="bg-black/50 backdrop-blur border-white/10 overflow-hidden hover:border-[#02f8b5]/50 transition-colors">
+                        <Card key={i} className="bg-black/50 backdrop-blur border-white/10 overflow-hidden hover:border-[#1cd9ff]/50 transition-colors">
                             <details className="p-4">
                                 <summary className="cursor-pointer font-medium text-[#1cd9ff]">{faq.q}</summary>
-                                <div className="mt-4 pl-4 text-gray-300 border-l-2 border-[#02f8b5]">{faq.a}</div>
+                                <div className="mt-4 pl-4 text-gray-300 border-l-2 border-[#1cd9ff]">{faq.a}</div>
                             </details>
                         </Card>
                         ))}
@@ -358,7 +358,7 @@ export default function AndroidPage() {
             <section id="contact" className="relative py-12 overflow-hidden">
                 <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
                     <div className="text-center md:text-left">
-                        <h4 className="text-2xl font-bold" style={{ color: "#02f8b5" }}>Lets work together</h4>
+                        <h4 className="text-2xl font-bold" style={{ color: "#1cd9ff" }}>Lets work together</h4>
                         <p className="mt-2 text-gray-300">Get a free consultation to scope your Android app project.</p>
                     </div>
 
@@ -366,7 +366,7 @@ export default function AndroidPage() {
                         <Link
                             href="/contactus"
                             className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                            style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+                            style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
                         >
                             Start Your Project
                         </Link>

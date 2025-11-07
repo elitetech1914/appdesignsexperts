@@ -11,7 +11,7 @@ export default function PortfolioShowcase(){
   return (
     <section className="relative bg-black text-white overflow-hidden">
       {/* CSS variable for accent color */}
-      <div style={{ ['--accent' as string]: '#02f8b5' }}>
+      <div style={{ ['--accent' as string]: '#1cd9ff' }}>
         {/* Top bar */}
         <header className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-3">

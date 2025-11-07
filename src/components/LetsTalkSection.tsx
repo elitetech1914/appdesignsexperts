@@ -31,10 +31,10 @@ const LetsTalkSection = () => {
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold text-[#1cd9ff] mb-6">
             Let&apos;s Talk About Your Project
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
           <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
             Ready to transform your ideas into reality? Get in touch with us and let&apos;s create something amazing together.
           </p>
@@ -55,7 +55,7 @@ const LetsTalkSection = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-800 text-white focus:border-[#02f8b5] focus:ring-1 focus:ring-[#02f8b5] transition-colors placeholder:text-gray-500"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-800 text-white focus:border-[#1cd9ff] focus:ring-1 focus:ring-[#1cd9ff] transition-colors placeholder:text-gray-500"
                   placeholder="John Doe"
                   required
                 />
@@ -70,7 +70,7 @@ const LetsTalkSection = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-800 text-white focus:border-[#02f8b5] focus:ring-1 focus:ring-[#02f8b5] transition-colors placeholder:text-gray-500"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-800 text-white focus:border-[#1cd9ff] focus:ring-1 focus:ring-[#1cd9ff] transition-colors placeholder:text-gray-500"
                   placeholder="john@example.com"
                   required
                 />
@@ -87,7 +87,7 @@ const LetsTalkSection = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-800 text-white focus:border-[#02f8b5] focus:ring-1 focus:ring-[#02f8b5] transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-800 text-white focus:border-[#1cd9ff] focus:ring-1 focus:ring-[#1cd9ff] transition-colors"
                 required
               >
                 <option value="" className="bg-gray-900">Select a service</option>
@@ -110,7 +110,7 @@ const LetsTalkSection = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={6}
-                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-800 text-white focus:border-[#02f8b5] focus:ring-1 focus:ring-[#02f8b5] transition-colors placeholder:text-gray-500"
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-800 text-white focus:border-[#1cd9ff] focus:ring-1 focus:ring-[#1cd9ff] transition-colors placeholder:text-gray-500"
                 placeholder="Tell us about your project..."
                 required
               />
@@ -120,7 +120,7 @@ const LetsTalkSection = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black font-semibold hover:opacity-90 transition-opacity"
+                className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] text-black font-semibold hover:opacity-90 transition-opacity"
               >
                 Send Message
                 <svg 

@@ -96,7 +96,7 @@ export default function IndustriesPage() {
     >
       <div
         style={{
-          ["--accent-1" as string]: "#02f8b5",
+          ["--accent-1" as string]: "#1cd9ff",
           ["--accent-2" as string]: "#1cd9ff",
         }}
       >
@@ -150,10 +150,10 @@ export default function IndustriesPage() {
               <div className="px-6 pt-16 md:pt-20 lg:pt-24 pb-12">
                 {/* The overlapping block (no extra bg here since container is black) */}
                 <div className="text-center mb-16">
-                  <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                  <h1 className="text-5xl font-bold bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
                     Industry Solutions
                   </h1>
-                  <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                  <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                   <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
                     Digitally change your business with support from a trusted Metro App Coders expert who knows all aspects of different industries and technologies.
                   </p>
@@ -164,7 +164,7 @@ export default function IndustriesPage() {
                   <h1 className="text-5xl font-bold bg-[#1cd9ff] bg-clip-text text-transparent mb-6">
                     Transformational App & Web Development Across Industries
                   </h1>
-                  <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                  <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                   <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
                     Leverage next-gen technologies to build industry leading solutions that offer scalable and transformational user experience seamlessly. Our software experts have deep domain knowledge and use modern tools to deliver holistic app and web solutions tailored to your needs.
                   </p>
@@ -255,10 +255,10 @@ export default function IndustriesPage() {
 
                 {/* Our Work / Success Stories */}
                 <div className="text-center mb-16 mt-16">
-                  <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                  <h1 className="text-5xl font-bold bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
                     Success Stories
                   </h1>
-                  <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                  <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                   <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
                     We did it together.....
                   </p>
@@ -269,10 +269,10 @@ export default function IndustriesPage() {
 
                 {/* Testimonial */}
                 <div className="text-center mt-16">
-                  <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+                  <h1 className="text-5xl font-bold bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
                     What Clients Say
                   </h1>
-                  <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+                  <div className="w-24 h-1 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] mx-auto rounded-full"></div>
                 </div>
                 <TestimonialCarousel testimonials={sampleTestimonials} />
               </div>

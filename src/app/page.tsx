@@ -76,7 +76,7 @@ export default function Home() {
 
   return (
     <div className="overflow-x-hidden relative">
-      <WavyBackground colors={['#02f8b5', '#1cd9ff']} className="max-w-4xl w-full mx-auto pb-20 flex flex-col gap-5 justify-center items-center relative">
+      <WavyBackground colors={['#00ffee',"#fc00ff"]} className="max-w-4xl w-full mx-auto pb-20 flex flex-col gap-5 justify-center items-center relative">
         <div className="w-full px-4">
           <motion.div className="text-white text-[200px] relative mx-4 my-4 flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
             <LayoutTextFlip
@@ -94,7 +94,7 @@ export default function Home() {
           <ShimmerButton
             shimmerColor={'rgba(0, 0, 0, 0.9)'}
             shimmerDuration={'2s'}
-            background="linear-gradient(to right, #02f8b5, #1cd9ff)"
+            background="linear-gradient(to right,#fc00ff, #00ffee)"
             className="shadow-6xl"
           >
             <span className="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-black lg:text-lg">
@@ -103,14 +103,13 @@ export default function Home() {
           </ShimmerButton>
             </Link>
             <Link href="/portfolio">
-          <ShimmerButton shimmerColor={'#02f8b5'} shimmerDuration={'2s'} className="shadow-2xl">
+          <ShimmerButton shimmerColor={'#1cd9ff'} shimmerDuration={'2s'} className="shadow-2xl">
             <span className="text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-white lg:text-lg dark:from-white dark:to-slate-900/10">
               OUR WORK
             </span>
           </ShimmerButton>
             </Link>
 
-        </div>
         <div className="absolute max-sm:-bottom-30 -bottom-50 left-1/2 -translate-x-1/2 w-screen">
           <Marquee className="w-full overflow-hidden">
             {logos.map((logo, index) => (
@@ -125,6 +124,7 @@ export default function Home() {
             ))}
           </Marquee>
         </div>
+        </div>
       </WavyBackground>
       <ServicesSection services={servicesData} />
       <OurProcesss/>
@@ -133,9 +133,9 @@ export default function Home() {
 
       <section>
         <div className='text-center mt-12 flex flex-col gap-5 justify-center items-center px-6'>
-          <div className='flex gap-3 text-[#02f8b5]'>
+          <div className='flex gap-3 text-[#1cd9ff]'>
             <Award className='max-sm:hidden' size={40}/>
-            <h2 className="text-3xl mb-5 font-bold text-[#02f8b5]">Awards and Recognitions</h2>
+            <h2 className="text-3xl mb-5 font-bold text-[#1cd9ff]">Awards and Recognitions</h2>
           </div>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed px-6">
                 With the utmost priority of adding value to the projects we undertake, we ensure that our partners stay ahead of the clutter and achieve excellence.

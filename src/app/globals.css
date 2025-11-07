@@ -179,12 +179,12 @@ body{
 }
 
 :root{
-  --accent-cyan: #02f8b5;
+  --accent-cyan: #1cd9ff;
   --accent-cyan-2: #1cd9ff;
   /* Change this to 4px to make it even thinner */
   --scrollbar-size: 6px;
-  --color-primary-500: #02f8b5;
-  --color-primary-600: #00e0a0;
+  --color-primary-500: #1cd9ff;
+  --color-primary-600: #1cd9ff;
   --color-secondary-500: #1cd9ff;
   --color-secondary-600: #00c4eb;
 }

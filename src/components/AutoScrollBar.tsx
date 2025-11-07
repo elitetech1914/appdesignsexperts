@@ -126,7 +126,7 @@ const AutoScrollBar: React.FC<AutoScrollBarProps> = ({
 
   return (
     <div 
-      className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] py-8"
+      className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] py-8"
       onMouseEnter={pauseAutoScroll}
       onMouseLeave={resumeAutoScroll}
       onTouchStart={pauseAutoScroll}
@@ -135,7 +135,7 @@ const AutoScrollBar: React.FC<AutoScrollBarProps> = ({
       {/* Left Arrow Button */}
       <button
         onClick={() => scroll('left')}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black rounded-full p-3 transition-all duration-300 shadow-lg hover:scale-110 hover:shadow-xl"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] text-black rounded-full p-3 transition-all duration-300 shadow-lg hover:scale-110 hover:shadow-xl"
         aria-label="Scroll left"
       >
         <ChevronLeft className="h-6 w-6" />
@@ -172,7 +172,7 @@ const AutoScrollBar: React.FC<AutoScrollBarProps> = ({
       {/* Right Arrow Button */}
       <button
         onClick={() => scroll('right')}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black rounded-full p-3 transition-all duration-300 shadow-lg hover:scale-110 hover:shadow-xl"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] text-black rounded-full p-3 transition-all duration-300 shadow-lg hover:scale-110 hover:shadow-xl"
         aria-label="Scroll right"
       >
         <ChevronRight className="h-6 w-6" />

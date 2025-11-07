@@ -32,8 +32,8 @@ export default function OurNumbersSection() {
 
             <div className="md:w-auto flex gap-44 justify-between max-md:flex-col max-md:gap-10">
                 <div>
-                    <h3 className="text-3xl md:text-4xl font-extrabold text-[#02f8b5]">Numbers Speak Louder Than Words</h3>
-                    <div className="w-20 h-[2px] bg-[#02f8b5] mt-4 mb-6"/>
+                    <h3 className="text-3xl md:text-4xl font-extrabold text-[#1cd9ff]">Numbers Speak Louder Than Words</h3>
+                    <div className="w-20 h-[2px] bg-[#1cd9ff] mt-4 mb-6"/>
 
                     <p className="text-slate-300 max-w-3xl text-lg leading-relaxed">
                         We prioritize delivering the best web and mobile app development solutions to our clients that leads to supreme customer satisfaction.
@@ -62,7 +62,7 @@ export default function OurNumbersSection() {
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-32 max-md:gap-x-0 items-start mt-10 text-center md:text-left">
               {STAT_ITEMS.map((s) => (
                 <div key={s.label} className="min-w-[110px]">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-[#02f8b5]">{s.value}</div>
+                  <div className="text-3xl sm:text-4xl font-extrabold text-[#1cd9ff]">{s.value}</div>
                   <div className="mt-2 text-sm text-slate-300">{s.label}</div>
                 </div>
               ))}
@@ -71,7 +71,7 @@ export default function OurNumbersSection() {
 
         {/* Reimagining section below */}
         <div className="mt-10">
-          <h4 className="text-2xl font-extrabold text-[#02f8b5]">Reimagining</h4>
+          <h4 className="text-2xl font-extrabold text-[#1cd9ff]">Reimagining</h4>
           <h2 className="text-3xl sm:text-4xl font-extrabold mt-2">The Entrepreneurial Ecosystem</h2>
           <p className="mt-4 text-slate-300 max-w-2xl text-lg">From eCommerce to IT and mLearning industries, we have empowered over 12+ domains and we are only getting started!</p>
         </div>

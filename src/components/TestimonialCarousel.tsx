@@ -222,7 +222,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
       <button
         onClick={() => handleArrow("left")}
         aria-label="Previous testimonial"
-        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black rounded-full p-3 ml-2 transition-transform duration-200 shadow-lg hover:scale-110"
+        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] text-black rounded-full p-3 ml-2 transition-transform duration-200 shadow-lg hover:scale-110"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
@@ -274,7 +274,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
       <button
         onClick={() => handleArrow("right")}
         aria-label="Next testimonial"
-        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] text-black rounded-full p-3 mr-2 transition-transform duration-200 shadow-lg hover:scale-110"
+        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] text-black rounded-full p-3 mr-2 transition-transform duration-200 shadow-lg hover:scale-110"
       >
         <ChevronRight className="h-6 w-6" />
       </button>
@@ -301,7 +301,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
                 resetAutoScroll();
               }}
               aria-label={`Go to testimonial ${idx + 1}`}
-              className={`w-2 h-2 rounded-full transition-all duration-200 ${isActive ? "bg-[#02f8b5]" : "bg-gray-600"}`}
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${isActive ? "bg-[#1cd9ff]" : "bg-gray-600"}`}
             />
           );
         })}

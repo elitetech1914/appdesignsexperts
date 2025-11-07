@@ -34,7 +34,7 @@ function MarqueeCard({ title, subtitle, image }: { title: string; subtitle?: str
         backgroundPosition: "center",
       }
     : {
-        background: "linear-gradient(90deg,#02f8b5,#1cd9ff)",
+        background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)",
       };
 
   // small helper to pick a lucide icon (optional)
@@ -51,7 +51,7 @@ function MarqueeCard({ title, subtitle, image }: { title: string; subtitle?: str
       {/* decorative icon badge */}
       <div
         className="absolute left-3 top-3 w-10 h-10 rounded-md flex items-center justify-center"
-        style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+        style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
         aria-hidden
       >
         {Icon ? <Icon className="h-5 w-5 text-black" /> : <span className="block w-3 h-3 rounded-full bg-black/80" />}

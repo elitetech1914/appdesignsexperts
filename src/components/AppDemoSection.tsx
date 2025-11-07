@@ -10,7 +10,7 @@ const AppDemoSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-screen">
             {/* Left content - hidden on mobile */}
             <div className="hidden lg:block text-white space-y-6">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold text-[#1cd9ff]">
                 Left Side Content
               </h2>
               <p className="text-gray-300">
@@ -18,11 +18,11 @@ const AppDemoSection = () => {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-2">
-                  <span className="text-[#02f8b5]">→</span>
+                  <span className="text-[#1cd9ff]">→</span>
                   Feature point one
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#02f8b5]">→</span>
+                  <span className="text-[#1cd9ff]">→</span>
                   Feature point two
                 </li>
               </ul>
@@ -42,7 +42,7 @@ const AppDemoSection = () => {
 
             {/* Right content - hidden on mobile */}
             <div className="hidden lg:block text-white space-y-6">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold text-[#1cd9ff] ">
                 Right Side Content
               </h2>
               <p className="text-gray-300">
@@ -50,7 +50,7 @@ const AppDemoSection = () => {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-lg bg-white/5 backdrop-blur">
-                  <div className="text-2xl font-bold text-[#02f8b5]">100+</div>
+                  <div className="text-2xl font-bold text-[#1cd9ff]">100+</div>
                   <div className="text-sm text-gray-400">Active Users</div>
                 </div>
                 <div className="p-4 rounded-lg bg-white/5 backdrop-blur">
@@ -72,7 +72,7 @@ const AppDemoSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-screen">
             {/* Left content - hidden on mobile */}
             <div className="hidden lg:block text-white space-y-6">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold text-[#1cd9ff]">
                 Key Features
               </h2>
               <p className="text-gray-300">
@@ -80,7 +80,7 @@ const AppDemoSection = () => {
               </p>
               <div className="space-y-4">
                 <div className="p-4 rounded-lg bg-white/5 backdrop-blur">
-                  <h3 className="text-[#02f8b5] font-semibold mb-2">Smart Analytics</h3>
+                  <h3 className="text-[#1cd9ff] font-semibold mb-2">Smart Analytics</h3>
                   <p className="text-sm text-gray-400">Advanced insights and data visualization</p>
                 </div>
                 <div className="p-4 rounded-lg bg-white/5 backdrop-blur">
@@ -102,7 +102,7 @@ const AppDemoSection = () => {
 
             {/* Right content - hidden on mobile */}
             <div className="hidden lg:block text-white space-y-6">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold text-[#1cd9ff]">
                 Why Choose Us
               </h2>
               <p className="text-gray-300">
@@ -110,7 +110,7 @@ const AppDemoSection = () => {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 bg-white/5 p-3 rounded-lg backdrop-blur">
-                  <span className="text-[#02f8b5] text-xl">✓</span>
+                  <span className="text-[#1cd9ff] text-xl">✓</span>
                   <div>
                     <h3 className="font-semibold">Easy Integration</h3>
                     <p className="text-sm text-gray-400">Seamless setup process</p>

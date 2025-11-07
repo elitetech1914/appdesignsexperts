@@ -11,10 +11,10 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#00e5ff] to-[#00ddff] bg-clip-text text-transparent mb-6">
             Our Services
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#00ffee] to-[#fc00ff] mx-auto rounded-full"></div>
           <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
             Comprehensive digital solutions to transform your business and drive growth
           </p>
@@ -25,11 +25,11 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           {services.map((service) => (
             <Link href={`/${service.url}`} key={service.id}>
             <div
-              className="bg-gray-900 rounded-2xl border border-gray-800 transition-all duration-500 group overflow-hidden hover:shadow-2xl hover:shadow-[#02f8b5]/30"
+              className="bg-gray-900 rounded-2xl border border-gray-800 transition-all duration-500 group overflow-hidden hover:shadow-2xl hover:shadow-[#1cd9ff]/30"
             >
               {/* Service Header */}
               <div className="p-6 h-72 border-b border-gray-800">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#02f8b5] group-hover:to-[#1cd9ff] group-hover:bg-clip-text transition-all duration-300">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#00ffee] group-hover:to-[#fc00ff] group-hover:bg-clip-text transition-all duration-300">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -40,10 +40,10 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
               {/* Explore Section */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-semibold bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] bg-clip-text text-transparent uppercase tracking-wide">
+                  <span className="text-sm font-semibold bg-gradient-to-r from-[#00ffee] to-[#fc00ff] bg-clip-text text-transparent uppercase tracking-wide">
                     Explore
                   </span>
-                  <div className="w-8 h-px bg-gradient-to-r from-[#02f8b5] to-[#1cd9ff] flex-1 ml-2"></div>
+                  <div className="w-8 h-px bg-gradient-to-r from-[#00e5ff] to-[#00ddff] flex-1 ml-2"></div>
                 </div>
 
                 {/* Technologies Grid */}
@@ -71,12 +71,12 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
 
               {/* Category Badge */}
               <div className="px-6 pb-6 flex justify-between items-center">
-                <span className="inline-block bg-gradient-to-r from-[#02f8b5]/20 to-[#1cd9ff]/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-[#02f8b5]/30">
+                <span className="inline-block bg-gradient-to-r from-[#1cd9ff]/20 to-[#1cd9ff]/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-[#1cd9ff]/30">
                   {service.category}
                 </span>
                 <span>
 
-                  <ArrowRight className="inline-block ml-2 text-[#02f8b5]" size={25} />
+                  <ArrowRight className="inline-block ml-2 text-[#00ffee]" size={25} />
                   
                 </span>
               </div>

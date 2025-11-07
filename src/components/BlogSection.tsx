@@ -50,7 +50,7 @@ export default function BlogSection(){
     <section
       aria-labelledby="blog-heading"
       className="max-w-7xl mx-auto px-6 py-16"
-      style={{ ["--accent-1" as string]: "#02f8b5", ["--accent-2" as string]: "#1cd9ff" }}
+      style={{ ["--accent-1" as string]: "#1cd9ff", ["--accent-2" as string]: "#1cd9ff" }}
     >
       <h2 id="blog-heading" className="sr-only">
         Blog

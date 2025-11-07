@@ -40,7 +40,7 @@ const servicesData: Service[] = [
 
 const Services = () => {
   return (
-    <section style={{ ["--accent-1" as string]: "#02f8b5", ["--accent-2" as string]: "#1cd9ff" }} className='pt-20 text-white'>
+    <section style={{ ["--accent-1" as string]: "#1cd9ff", ["--accent-2" as string]: "#1cd9ff" }} className='pt-20 text-white'>
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 lg:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* LEFT: Heading, subcopy, CTA */}
@@ -53,7 +53,7 @@ const Services = () => {
               <a
                 href="#contact"
                 className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                style={{ background: "linear-gradient(90deg,#02f8b5,#1cd9ff)" }}
+                style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
               >
                 TALK WITH CONSULTANT
               </a>
