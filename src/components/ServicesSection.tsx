@@ -14,7 +14,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           <h1 className="text-5xl font-bold bg-gradient-to-r from-[#00e5ff] to-[#00ddff] bg-clip-text text-transparent mb-6">
             Our Services
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00ffee] to-[#fc00ff] mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#00ddff] to-[#00ddff] mx-auto rounded-full"></div>
           <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
             Comprehensive digital solutions to transform your business and drive growth
           </p>
@@ -25,7 +25,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           {services.map((service) => (
             <Link href={`/${service.url}`} key={service.id}>
             <div
-              className="bg-gray-900 rounded-2xl border border-gray-800 transition-all duration-500 group overflow-hidden hover:shadow-2xl hover:shadow-[#1cd9ff]/30"
+              className="bg-gray-900 rounded-2xl border border-gray-800 transition-all duration-500 group overflow-hidden hover:shadow-2xl hover:shadow-[#02f8b5]/30"
             >
               {/* Service Header */}
               <div className="p-6 h-72 border-b border-gray-800">
@@ -40,10 +40,10 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
               {/* Explore Section */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-semibold bg-gradient-to-r from-[#00ffee] to-[#fc00ff] bg-clip-text text-transparent uppercase tracking-wide">
+                  <span className="text-sm font-semibold bg-gradient-to-r from-[#00e5ff] to-[#fc00ff] bg-clip-text text-transparent uppercase tracking-wide">
                     Explore
                   </span>
-                  <div className="w-8 h-px bg-gradient-to-r from-[#00e5ff] to-[#00ddff] flex-1 ml-2"></div>
+                  <div className="w-8 h-px bg-gradient-to-r from-[#00e5ff] to-[#00e5ff] flex-1 ml-2"></div>
                 </div>
 
                 {/* Technologies Grid */}
@@ -71,7 +71,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
 
               {/* Category Badge */}
               <div className="px-6 pb-6 flex justify-between items-center">
-                <span className="inline-block bg-gradient-to-r from-[#1cd9ff]/20 to-[#1cd9ff]/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-[#1cd9ff]/30">
+                <span className="inline-block bg-gradient-to-r from-[#02f8b5]/20 to-[#1cd9ff]/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-[#02f8b5]/30">
                   {service.category}
                 </span>
                 <span>

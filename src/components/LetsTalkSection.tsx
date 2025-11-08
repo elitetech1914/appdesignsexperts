@@ -120,7 +120,7 @@ const LetsTalkSection = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] text-black font-semibold hover:opacity-90 transition-opacity"
+                className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-[#1cd9ff] to-[#fc00ff] text-black font-semibold hover:opacity-90 transition-opacity"
               >
                 Send Message
                 <svg 

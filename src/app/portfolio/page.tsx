@@ -54,7 +54,7 @@ export default function PortfolioPage(){
                   <a
                     href="#contact"
                     className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                    style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
+                    style={{ background: "linear-gradient(90deg,#1cd9ff,#fc00ff)" }}
                   >
                     TALK WITH CONSULTANT
                   </a>
@@ -134,14 +134,14 @@ export default function PortfolioPage(){
                   <h3 className="text-lg font-semibold">{p.title}</h3>
                   <p className="text-sm text-slate-300">{p.tag}</p>
 
-                  <div className="mt-4 flex items-center justify-between">
+                  {/* <div className="mt-4 flex items-center justify-between">
                     {p.caseStudy && <a
                       href={`/${p.caseStudy}`}
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] text-black font-semibold text-sm"
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-[#1cd9ff] to-[#fc00ff] text-black font-semibold text-sm"
                     >
                       View Case
                     </a>}
-                  </div>
+                  </div> */}
                 </div>
               </article>
             ))}

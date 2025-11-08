@@ -129,7 +129,7 @@ export default function IndustriesPage() {
               <div className="mt-6 flex items-center gap-4">
                 <Button
                   className="rounded-full px-5 py-3 bg-gradient-to-r text-black"
-                  style={{ backgroundImage: `linear-gradient(90deg, var(--accent-1), var(--accent-2))` }}
+                  style={{ backgroundImage: `linear-gradient(90deg, var(--accent-1), #fc00ff)` }}
                 >
                   Talk to our Experts
                 </Button>
@@ -288,7 +288,7 @@ export default function IndustriesPage() {
             </div>
             <div className="flex items-center gap-4">
               <Button
-                style={{ backgroundImage: `linear-gradient(90deg, var(--accent-1), var(--accent-2))` }}
+                style={{ backgroundImage: `linear-gradient(90deg, var(--accent-1), #fc00ff)` }}
                 className="rounded-full px-6 py-3"
               >
                 Get Started

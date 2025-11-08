@@ -53,7 +53,7 @@ const Services = () => {
               <a
                 href="#contact"
                 className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
+                style={{ background: "linear-gradient(90deg,#1cd9ff,#fc00ff)" }}
               >
                 TALK WITH CONSULTANT
               </a>
