@@ -11,19 +11,19 @@ const AppDemoSection = () => {
             {/* Left content - hidden on mobile */}
             <div className="hidden lg:block text-white space-y-6">
               <h2 className="text-3xl font-bold text-[#1cd9ff]">
-                Left Side Content
+                Key Features
               </h2>
               <p className="text-gray-300">
-                Add your content for the left side here. This could be features, benefits, or any other information.
+                Discover the powerful features that make our apps stand out from the competition.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-2">
                   <span className="text-[#1cd9ff]">→</span>
-                  Feature point one
+                  Scalability
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-[#1cd9ff]">→</span>
-                  Feature point two
+                  Performance
                 </li>
               </ul>
             </div>
@@ -43,10 +43,10 @@ const AppDemoSection = () => {
             {/* Right content - hidden on mobile */}
             <div className="hidden lg:block text-white space-y-6">
               <h2 className="text-3xl font-bold text-[#1cd9ff] ">
-                Right Side Content
+                Performance Metrics
               </h2>
               <p className="text-gray-300">
-                Add your content for the right side here. This could be technical specs, statistics, or additional information.
+                Our apps are optimized for speed and efficiency, ensuring a smooth user experience.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-lg bg-white/5 backdrop-blur">

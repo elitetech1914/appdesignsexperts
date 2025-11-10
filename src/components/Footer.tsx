@@ -64,7 +64,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
+                <Link href="/blogs" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
                   Blog
                 </Link>
               </li>
@@ -76,23 +76,23 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/services/web-development" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
-                  Web Development
+                <Link href="/android-app-development" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
+                  Android App Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/mobile-apps" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
-                  Mobile Apps
+                <Link href="/ios-app-development" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
+                  iOS App Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/ui-ux" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
-                  UI/UX Design
+                <Link href="/react-native-app-development" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
+                  React Native App Development
                 </Link>
               </li>
               <li>
                 <Link href="/services/consulting" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
-                  IT Consulting
+                  Website Development
                 </Link>
               </li>
             </ul>
