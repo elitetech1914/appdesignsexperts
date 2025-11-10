@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elite Technology",
-  description: "Elite Technology",
+  title: "App Design Experts",
+  description: "App Design Experts - Transforming Ideas into Stunning Digital Experiences",
 };
 
 

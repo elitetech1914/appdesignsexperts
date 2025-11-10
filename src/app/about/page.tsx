@@ -99,7 +99,7 @@ const AboutPage = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="p-4 bg-gradient-to-r from-[#1cd9ff] to-[#1cd9ff] rounded-2xl">
+            <div className="p-4 bg-gradient-to-r from-[#1cd9ff] to-[#fc00ff] rounded-2xl">
               <Rocket className="w-12 h-12 text-black" />
             </div>
           </div>

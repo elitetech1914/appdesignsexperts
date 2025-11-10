@@ -234,7 +234,7 @@ export default function IndustriesPage() {
                               <div
                                 className="w-12 h-12 rounded-lg flex items-center justify-center"
                                 style={{
-                                  backgroundImage: `linear-gradient(90deg, var(--accent-1), var(--accent-2))`,
+                                  backgroundImage: `linear-gradient(90deg, var(--accent-1), #fc00ff)`,
                                 }}
                                 aria-hidden
                               >
