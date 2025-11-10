@@ -79,8 +79,7 @@ export default function AndroidPage() {
                             <div className="mt-8 flex items-center justify-center gap-4">
                                 <Link
                                     href="/contactus"
-                                    className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                                    style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
+                                    className="inline-block rounded-full px-6 py-3 font-semibold text-black bg-gradient-to-r from-[#1cd9ff] to-[#fc00ff]"
                                 >
                                     Hire React Native App Developers
                                 </Link>
@@ -261,8 +260,7 @@ export default function AndroidPage() {
                     <div className="mt-8 text-center">
                         <Link
                             href="/portfolio"
-                            className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                            style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
+                            className="inline-block rounded-full px-6 py-3 font-semibold text-black bg-gradient-to-r from-[#1cd9ff] to-[#fc00ff]"
                         >
                             View All Projects
                         </Link>
@@ -369,8 +367,7 @@ export default function AndroidPage() {
                     <div>
                         <Link
                             href="/contactus"
-                            className="inline-block rounded-full px-6 py-3 font-semibold text-black"
-                            style={{ background: "linear-gradient(90deg,#1cd9ff,#1cd9ff)" }}
+                            className="inline-block rounded-full px-6 py-3 font-semibold text-black bg-gradient-to-r from-[#1cd9ff] to-[#fc00ff]"
                         >
                             Start Your Project
                         </Link>
