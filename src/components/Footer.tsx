@@ -135,7 +135,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {currentYear} App Designs Experts Powered by <b>ERS Technologies LLC</b>. All rights reserved.
+              © {currentYear} <b>App Designs Experts</b> Powered by <b>ERS Technologies LLC</b>. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-[#1cd9ff] transition-colors">
@@ -151,3 +151,4 @@ const Footer = () => {
 
 
 export default Footer;
+
